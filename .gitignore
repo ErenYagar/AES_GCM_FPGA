@@ -1,0 +1,29 @@
+# Vivado temporary / generated files
+*.jou
+*.log
+*.str
+
+# Vivado project generated folders
+.cache/
+.hw/
+.ip_user_files/
+.sim/
+.runs/
+.gen/
+.Xil/
+
+# Simulation outputs
+*.wdb
+*.pb
+*.vcd
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+
+# Optional: ignore copied result files
+*.bit
+*.bin
+*.ltx
