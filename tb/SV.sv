@@ -49,6 +49,8 @@ module tb_top_25cases;
     logic [719:0] aad_arr   [0:NUM_CASES-1];
 
     integer i;
+    integer current_case_idx;
+    integer case_ghash_evt_count;
 
     task automatic send_len(input logic [2:0] t, input logic [10:0] len_bits);
     begin
@@ -134,6 +136,9 @@ endtask
 
     task automatic run_one_case(input int idx);
     begin
+        current_case_idx     = idx;
+        case_ghash_evt_count = 0;
+
         $display("======================================================");
         $display("CASE %0d", idx+1);
         $display("PTlen  = %0d", ptlen_arr[idx]);
@@ -325,10 +330,20 @@ endtask
 
     always_ff @(posedge clk) begin
         if (dbg_GHASH_en) begin
+            if ((current_case_idx == 1) && (case_ghash_evt_count == 0)) begin
+                if (dbg_GHASH_block !== 128'h6749daeea367d0e9809e2dc2f309e6e3) begin
+                    $error("CASE 2 first GHASH block mismatch. got=%032h expected=%032h",
+                           dbg_GHASH_block, 128'h6749daeea367d0e9809e2dc2f309e6e3);
+                end
+            end
+
             $display("[%0t] GHASH_en = 1", $time);
+            $display("    case           = %0d", current_case_idx + 1);
+            $display("    ghash_evt_idx  = %0d", case_ghash_evt_count);
             $display("    dbg_byte_num    = %0d", dbg_byte_num);
             $display("    dbg_GHASH_block = %032h", dbg_GHASH_block);
             $display("    dbg_lenbit      = %032h", dbg_lenbit);
+            case_ghash_evt_count <= case_ghash_evt_count + 1;
         end
     end
 
