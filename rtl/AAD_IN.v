@@ -9,12 +9,9 @@ module top (
     input         last,
 
     output [7:0]   out,
-    output [127:0] dbg_GHASH_in,
     output [127:0] dbg_GHASH_block,
-    output         dbg_GHASH_en,
-    output [127:0] dbg_lenbit,
-    output [7:0]   dbg_byte_num
-);
+    output         dbg_GHASH_en
+    );
 
 reg  [127:0] GHASH_in;
 reg  [127:0] GHASH_block;
@@ -24,14 +21,18 @@ reg  [7:0]   byte_num;
 reg          GHASH_en;
 
 wire [127:0] lenbit;
+wire [127:0] next_ghash_in;
+wire [127:0] padded_last_block;
+wire         emit_data_block;
+
 assign lenbit = {AADlen, CTlen};
+assign next_ghash_in     = {GHASH_in[119:0], in};
+assign padded_last_block = next_ghash_in << ((16 - (byte_num + 8'd1)) * 8);
+assign emit_data_block   = last || (byte_num == 8'd15);
 
 assign out             = in;
-assign dbg_GHASH_in    = GHASH_in;
 assign dbg_GHASH_block = GHASH_block;
 assign dbg_GHASH_en    = GHASH_en;
-assign dbg_lenbit      = lenbit;
-assign dbg_byte_num    = byte_num;
 
 localparam TYPE_CT_DATA   = 3'd0;
 localparam TYPE_AAD_DATA  = 3'd1;
@@ -64,24 +65,18 @@ always @(posedge clk or negedge rst) begin
 
                 TYPE_AAD_DATA,
                 TYPE_CT_DATA: begin
-                    if (last) begin
-                        if (byte_num == 8'd15)
-                            GHASH_block <= {GHASH_in[119:0], in};
+                    if (emit_data_block) begin
+                        if (last && (byte_num != 8'd15))
+                            GHASH_block <= padded_last_block;
                         else
-                            GHASH_block <= ({GHASH_in[119:0], in} << ((16 - (byte_num + 8'd1)) * 8));
+                            GHASH_block <= next_ghash_in;
 
                         GHASH_en <= 1'b1;
                         GHASH_in <= 128'd0;
                         byte_num <= 8'd0;
                     end
-                    else if (byte_num == 8'd15) begin
-                        GHASH_block <= {GHASH_in[119:0], in};
-                        GHASH_en    <= 1'b1;
-                        GHASH_in    <= 128'd0;
-                        byte_num    <= 8'd0;
-                    end
                     else begin
-                        GHASH_in <= {GHASH_in[119:0], in};
+                        GHASH_in <= next_ghash_in;
                         byte_num <= byte_num + 8'd1;
                     end
                 end
