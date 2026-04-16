@@ -1,0 +1,57 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/project/FPGA
+vGHASH
+!s110 1776305264
+!i10b 1
+!s100 IV5_T4KLQU1^3AI3GzK6o2
+IE4MJ=U=;RT67b^dDNM<gU2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1776305213
+8C:\project\FPGA\rtl\GHASH.v
+FC:\project\FPGA\rtl\GHASH.v
+L0 3
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z3 !s108 1776305264.000000
+Z4 !s107 C:\project\FPGA\tb\GHASH_tb.sv|C:\project\FPGA\rtl\GHASH.v|
+Z5 !s90 -work|work_ghash_stream|C:\project\FPGA\rtl\GHASH.v|C:\project\FPGA\tb\GHASH_tb.sv|
+!i113 1
+Z6 o-work work_ghash_stream
+Z7 tCvgOpt 0
+n@g@h@a@s@h
+vtb_GHASH
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1776305265
+!i10b 1
+!s100 @5Ih0Cz@4G:f<RdQjDT]I2
+I9W][1lAP7EGeYZoD62;hW2
+R1
+!s105 GHASH_tb_sv_unit
+S1
+R0
+w1776305256
+8C:\project\FPGA\tb\GHASH_tb.sv
+FC:\project\FPGA\tb\GHASH_tb.sv
+L0 3
+R2
+r1
+!s85 0
+31
+R3
+R4
+R5
+!i113 1
+R6
+R7
+ntb_@g@h@a@s@h

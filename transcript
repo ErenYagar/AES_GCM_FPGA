@@ -1,21 +1,32 @@
-# vsim -c work_ghash_verify.tb_GHASH -do "run -all; quit -f" 
-# Start time: 16:08:45 on Apr 14,2026
+# vsim -c work_gcm_tag_rsp.tb_gcm_tag_rsp -do "run -all; quit -f" 
+# Start time: 10:11:07 on Apr 16,2026
 # Loading sv_std.std
-# Loading work_ghash_verify.tb_GHASH
-# Loading work_ghash_verify.GHASH
+# Loading work_gcm_tag_rsp.tb_gcm_tag_rsp
+# Loading work_gcm_tag_rsp.aes_ctr_wrapper
+# Loading work_gcm_tag_rsp.AES_e
+# Loading work_gcm_tag_rsp.s_box
+# Loading work_gcm_tag_rsp.sbox
+# Loading work_gcm_tag_rsp.s_row
+# Loading work_gcm_tag_rsp.m_col
+# Loading work_gcm_tag_rsp.multiplyByMat
+# Loading work_gcm_tag_rsp.multiply
+# Loading work_gcm_tag_rsp.addr
+# Loading work_gcm_tag_rsp.KeyGeneration
+# Loading work_gcm_tag_rsp.GHASH
 # run -all
-# [55000] start GHASH case=0
-# [1365000] case=0 block=0 Y=88eddca9968dec8b9c952d6ae0290a82
-# [2655000] case=0 block=1 Y=a8429866111e6a1e26ba512d172eea0b
-# [3945000] case=0 block=2 Y=1acc54925dcc7b25091991bb38f464ff
-# [3955000] case=0 final Y=1acc54925dcc7b25091991bb38f464ff
-# [3975000] start GHASH case=1
-# [5345000] case=1 block=0 Y=43ab22dee9df13953446bc31deb75ac5
-# [6635000] case=1 block=1 Y=27260537c2135b6025c2bc922d346860
-# [7925000] case=1 block=2 Y=e811e6c8e0fe09d78727aee0e88d0d64
-# [7935000] case=1 final Y=e811e6c8e0fe09d78727aee0e88d0d64
-# GHASH testbench completed.
-# ** Note: $finish    : C:/project/FPGA/tb/GHASH_tb.sv(204)
-#    Time: 7955 ns  Iteration: 0  Instance: /tb_GHASH
-# End time: 16:08:45 on Apr 14,2026, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# ======================================================
+# GCM TAG RSP Summary
+# Checked condition : IVlen=8/96/1024
+# Total cases       : 7875
+# Checked cases     : 7875
+# Matched CT cases  : 7875
+# Matched TAG cases : 7875
+# Matched full cases: 7875
+# Failed cases      : 0
+# Case match rate   : 100.00%
+# Passed blocks     : 12600
+# Block failures    : 0
+# Tag failures      : 0
+# GCM TAG verification completed.
+# ** Note: $finish    : C:/project/FPGA/tb/tb_gcm_tag_rsp.sv(647)
+#    Time: 159962265 ns  Iteration: 0  Instance: /tb_gcm_tag_rsp

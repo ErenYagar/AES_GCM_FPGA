@@ -1,0 +1,269 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/project/FPGA
+vaddr
+Z1 !s110 1776305444
+!i10b 1
+!s100 W[^^YAFX_mAV:;i0XcF9k3
+Ig^=Vf_:PLnGOBSczk?Lga2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1776231952
+8C:\project\FPGA\rtl\aes_core\addr.v
+FC:\project\FPGA\rtl\aes_core\addr.v
+L0 2
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1776305444.000000
+Z5 !s107 C:\project\FPGA\tb\tb_gcm_tag_rsp.sv|C:\project\FPGA\rtl\GHASH.v|C:\project\FPGA\rtl\ctr\aes_ctr_wrapper.v|C:\project\FPGA\rtl\aes_core\AES_e.v|C:\project\FPGA\rtl\aes_core\addr.v|C:\project\FPGA\rtl\aes_core\KeyGeneration.v|C:\project\FPGA\rtl\aes_core\m_col.v|C:\project\FPGA\rtl\aes_core\s_row.v|C:\project\FPGA\rtl\aes_core\s_box.v|C:\project\FPGA\rtl\aes_core\sbox.v|
+Z6 !s90 -work|work_gcm_tag_rsp|C:\project\FPGA\rtl\aes_core\sbox.v|C:\project\FPGA\rtl\aes_core\s_box.v|C:\project\FPGA\rtl\aes_core\s_row.v|C:\project\FPGA\rtl\aes_core\m_col.v|C:\project\FPGA\rtl\aes_core\KeyGeneration.v|C:\project\FPGA\rtl\aes_core\addr.v|C:\project\FPGA\rtl\aes_core\AES_e.v|C:\project\FPGA\rtl\ctr\aes_ctr_wrapper.v|C:\project\FPGA\rtl\GHASH.v|C:\project\FPGA\tb\tb_gcm_tag_rsp.sv|
+!i113 1
+Z7 o-work work_gcm_tag_rsp
+Z8 tCvgOpt 0
+vaes_ctr_wrapper
+R1
+!i10b 1
+!s100 MVSo2m7<PThRLl6N@P2T_1
+IdSh@VF:03obSPQIY3kZcl2
+R2
+R0
+w1776243504
+8C:\project\FPGA\rtl\ctr\aes_ctr_wrapper.v
+FC:\project\FPGA\rtl\ctr\aes_ctr_wrapper.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vAES_e
+R1
+!i10b 1
+!s100 DK<?jfESLBfaM:oY]l0660
+IPImV>3GHJ<Nm3>=:BFJ141
+R2
+R0
+w1776231893
+8C:\project\FPGA\rtl\aes_core\AES_e.v
+FC:\project\FPGA\rtl\aes_core\AES_e.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+n@a@e@s_e
+vGHASH
+R1
+!i10b 1
+!s100 IV5_T4KLQU1^3AI3GzK6o2
+Ij_=Vf_a`VzacOA5JA>[6z0
+R2
+R0
+w1776305213
+8C:\project\FPGA\rtl\GHASH.v
+FC:\project\FPGA\rtl\GHASH.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+n@g@h@a@s@h
+vKeyGeneration
+R1
+!i10b 1
+!s100 NDHL<UNM_P>V]9BSLf01_1
+Io@HiAEHSB5ie4C8<GeU7<3
+R2
+R0
+w1776237807
+8C:\project\FPGA\rtl\aes_core\KeyGeneration.v
+FC:\project\FPGA\rtl\aes_core\KeyGeneration.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+n@key@generation
+vm_col
+R1
+!i10b 1
+!s100 @0kQO@8Ok_O9mF:oKAZQH3
+ICoGh9D6@YCl9[mg>7Gb<Q1
+R2
+R0
+Z9 w1776231940
+Z10 8C:\project\FPGA\rtl\aes_core\m_col.v
+Z11 FC:\project\FPGA\rtl\aes_core\m_col.v
+L0 60
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vmultiply
+R1
+!i10b 1
+!s100 C^YjglLYU85oA<:Dl09?B0
+I>Kz9JAmJE63F<_9U4j:i81
+R2
+R0
+R9
+R10
+R11
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vmultiplyByMat
+R1
+!i10b 1
+!s100 iJ]1Hg0[E0MBcl>jUVZ=C0
+Ib1e;h?l?kIfj3>MzgKI3R1
+R2
+R0
+R9
+R10
+R11
+L0 15
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+nmultiply@by@mat
+vs_box
+R1
+!i10b 1
+!s100 23>dlzBBahmH@UQn9b0G21
+IUWK]ND[1Ka=:^i]a6cM2n1
+R2
+R0
+w1776231983
+8C:\project\FPGA\rtl\aes_core\s_box.v
+FC:\project\FPGA\rtl\aes_core\s_box.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vs_row
+R1
+!i10b 1
+!s100 jkLO]J0LBJPJcfG4ZmCl02
+I2G9ZX]XS3SeIz8D_Tmg5b3
+R2
+R0
+w1776231928
+8C:\project\FPGA\rtl\aes_core\s_row.v
+FC:\project\FPGA\rtl\aes_core\s_row.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vsbox
+R1
+!i10b 1
+!s100 D?IzL95C<TP[^=O3_PO;V3
+IgZY0>9XeG50zLOob>P:Ob1
+R2
+R0
+w1776232005
+8C:\project\FPGA\rtl\aes_core\sbox.v
+FC:\project\FPGA\rtl\aes_core\sbox.v
+L0 2
+R3
+r1
+!s85 0
+31
+R4
+R5
+R6
+!i113 1
+R7
+R8
+vtb_gcm_tag_rsp
+DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+!s110 1776305460
+!i10b 1
+!s100 zNUc?S3`;e<6jV_WSIF^]1
+IRH9WZ>@CGkP[S_oWL<X]?2
+R2
+!s105 tb_gcm_tag_rsp_sv_unit
+S1
+R0
+w1776305456
+8C:\project\FPGA\tb\tb_gcm_tag_rsp.sv
+FC:\project\FPGA\tb\tb_gcm_tag_rsp.sv
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1776305460.000000
+!s107 C:\project\FPGA\tb\tb_gcm_tag_rsp.sv|
+!s90 -work|work_gcm_tag_rsp|C:\project\FPGA\tb\tb_gcm_tag_rsp.sv|
+!i113 1
+R7
+R8
