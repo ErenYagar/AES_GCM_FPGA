@@ -49,6 +49,9 @@ localparam ST_OUT_PC         = 5'd21;
 localparam ST_OUT_TAG        = 5'd22;
 localparam ST_OUT_DEC_STATUS = 5'd23;
 localparam ST_CLEAR          = 5'd24;
+localparam ST_J0_PREP        = 5'd25;
+localparam ST_GHASH_AAD_PREP = 5'd26;
+localparam ST_GHASH_CT_PREP  = 5'd27;
 
 wire rst_n;
 assign rst_n = ~rst;
@@ -120,6 +123,9 @@ reg  [127:0] ghash_block;
 reg          ghash_en;
 reg  [127:0] ghash_h;
 reg          ghash_h_done;
+reg  [1023:0] ghash_src_data;
+reg  [10:0]   ghash_src_len_bits;
+reg  [3:0]    ghash_src_block_idx;
 wire         ghash_busy;
 wire         ghash_done;
 wire [127:0] ghash_y;
@@ -215,23 +221,17 @@ GHASH u_ghash (
 function [7:0] mask_last_byte;
 input [7:0] byte_in;
 input [10:0] total_bits;
-integer rem_bits;
-integer bit_idx;
 begin
-    rem_bits = total_bits % 8;
-
-    if ((total_bits == 0) || (rem_bits == 0))
-    begin
-    mask_last_byte = byte_in;
-    end
-    else
-    begin
-        mask_last_byte = 8'd0;
-        for (bit_idx = 0; bit_idx < rem_bits; bit_idx = bit_idx + 1)
-        begin
-        mask_last_byte[7 - bit_idx] = byte_in[7 - bit_idx];
-        end
-    end
+    case (total_bits[2:0])
+        3'd0: mask_last_byte = byte_in;
+        3'd1: mask_last_byte = {byte_in[7],   7'd0};
+        3'd2: mask_last_byte = {byte_in[7:6], 6'd0};
+        3'd3: mask_last_byte = {byte_in[7:5], 5'd0};
+        3'd4: mask_last_byte = {byte_in[7:4], 4'd0};
+        3'd5: mask_last_byte = {byte_in[7:3], 3'd0};
+        3'd6: mask_last_byte = {byte_in[7:2], 2'd0};
+        default: mask_last_byte = {byte_in[7:1], 1'b0};
+    endcase
 end
 endfunction
 
@@ -275,8 +275,8 @@ integer total_bytes;
 integer block_byte_start;
 integer bytes_left;
 integer block_bytes;
-integer byte_idx;
-integer src_byte_idx;
+integer bytes_after_block;
+integer shift_amt;
 reg [127:0] tmp;
 begin
     tmp = 128'd0;
@@ -292,10 +292,17 @@ begin
     else
         block_bytes = bytes_left;
 
-    for (byte_idx = 0; byte_idx < block_bytes; byte_idx = byte_idx + 1)
+    bytes_after_block = total_bytes - block_byte_start - block_bytes;
+    if (bytes_after_block < 0)
+        bytes_after_block = 0;
+
+    if (block_bytes != 0)
     begin
-        src_byte_idx = block_byte_start + byte_idx;
-        tmp[127 - (byte_idx * 8) -: 8] = data_bits[((total_bytes - 1 - src_byte_idx) * 8) +: 8];
+        shift_amt = bytes_after_block * 8;
+        tmp = data_bits >> shift_amt;
+
+        if (block_bytes < 16)
+            tmp = tmp << ((16 - block_bytes) * 8);
     end
 
     extract_block_1024 = tmp;
@@ -306,18 +313,14 @@ function [127:0] compact_block_to_128;
 input [127:0] block_in;
 input [10:0] total_bits;
 integer total_bytes;
-integer byte_idx;
-reg [127:0] tmp;
 begin
-    tmp = 128'd0;
     total_bytes = (total_bits + 11'd7) / 11'd8;
-
-    for (byte_idx = 0; byte_idx < total_bytes; byte_idx = byte_idx + 1)
-    begin
-        tmp = {tmp[119:0], block_in[127 - (byte_idx * 8) -: 8]};
-    end
-
-    compact_block_to_128 = tmp;
+    if (total_bytes == 0)
+        compact_block_to_128 = 128'd0;
+    else if (total_bytes >= 16)
+        compact_block_to_128 = block_in;
+    else
+        compact_block_to_128 = block_in >> ((16 - total_bytes) * 8);
 end
 endfunction
 
@@ -326,10 +329,14 @@ input [1023:0] data_bits;
 input [10:0] total_bits;
 input integer byte_idx;
 integer total_bytes;
+integer shift_amt;
 begin
     total_bytes = (total_bits + 11'd7) / 11'd8;
     if (byte_idx < total_bytes)
-        get_buffer_byte_1024 = data_bits[((total_bytes - 1 - byte_idx) * 8) +: 8];
+    begin
+        shift_amt = (total_bytes - 1 - byte_idx) * 8;
+        get_buffer_byte_1024 = (data_bits >> shift_amt) & 8'hff;
+    end
     else
         get_buffer_byte_1024 = 8'd0;
 end
@@ -364,8 +371,11 @@ integer total_bytes;
 integer block_byte_start;
 integer bytes_left;
 integer block_bytes;
-integer byte_idx;
-integer dst_byte_idx;
+integer bytes_after_block;
+integer shift_amt;
+integer field_bits;
+reg [1023:0] block_chunk;
+reg [1023:0] field_mask;
 begin
     total_bytes      = (total_bits + 11'd7) / 11'd8;
     block_byte_start = blk_idx * 16;
@@ -379,15 +389,30 @@ begin
     else
         block_bytes = bytes_left;
 
-    for (byte_idx = 0; byte_idx < block_bytes; byte_idx = byte_idx + 1)
+    bytes_after_block = total_bytes - block_byte_start - block_bytes;
+    if (bytes_after_block < 0)
+        bytes_after_block = 0;
+
+    if (block_bytes != 0)
     begin
-        dst_byte_idx = block_byte_start + byte_idx;
-        data_bits[((total_bytes - 1 - dst_byte_idx) * 8) +: 8] = block_in[127 - (byte_idx * 8) -: 8];
+        shift_amt  = bytes_after_block * 8;
+        field_bits = block_bytes * 8;
+
+        block_chunk = {896'd0, block_in};
+        if (block_bytes < 16)
+            block_chunk = block_chunk >> ((16 - block_bytes) * 8);
+        block_chunk = block_chunk << shift_amt;
+
+        field_mask = {1024{1'b1}};
+        field_mask = field_mask >> (1024 - field_bits);
+        field_mask = field_mask << shift_amt;
+
+        data_bits = (data_bits & ~field_mask) | block_chunk;
     end
 end
 endtask
 
-always @(posedge clk or negedge rst_n)
+always @(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -426,6 +451,9 @@ begin
     ghash_en          <= 1'b0;
     ghash_h           <= 128'd0;
     ghash_h_done      <= 1'b0;
+    ghash_src_data    <= 1024'd0;
+    ghash_src_len_bits<= 11'd0;
+    ghash_src_block_idx <= 4'd0;
     clear_collectors  <= 1'b0;
     pc_ct_valid       <= 1'b0;
     tag_valid         <= 1'b0;
@@ -528,16 +556,17 @@ begin
             begin
                 ghash_init     <= 1'b1;
                 data_block_idx <= 4'd0;
-                state          <= ST_J0_PUSH;
+                state          <= ST_J0_PREP;
             end
 
-            ST_J0_PUSH:
+            ST_J0_PREP:
             begin
                 if(data_block_idx < block_count(iv_len_bits))
                 begin
-                ghash_block <= extract_block_1024(iv_data, iv_len_bits, data_block_idx);
-                ghash_en    <= 1'b1;
-                state       <= ST_J0_WAIT;
+                ghash_src_data      <= iv_data;
+                ghash_src_len_bits  <= iv_len_bits;
+                ghash_src_block_idx <= data_block_idx;
+                state               <= ST_J0_PUSH;
                 end
                 else
                 begin
@@ -545,12 +574,19 @@ begin
                 end
             end
 
+            ST_J0_PUSH:
+            begin
+                ghash_block <= extract_block_1024(ghash_src_data, ghash_src_len_bits, ghash_src_block_idx);
+                ghash_en    <= 1'b1;
+                state       <= ST_J0_WAIT;
+            end
+
             ST_J0_WAIT:
             begin
                 if(ghash_done)
                 begin
                 data_block_idx <= data_block_idx + 4'd1;
-                state          <= ST_J0_PUSH;
+                state          <= ST_J0_PREP;
                 end
             end
 
@@ -621,21 +657,29 @@ begin
                 ghash_init    <= 1'b1;
                 aad_block_idx <= 4'd0;
                 ct_block_idx  <= 4'd0;
-                state         <= ST_GHASH_AAD_PUSH;
+                state         <= ST_GHASH_AAD_PREP;
+            end
+
+            ST_GHASH_AAD_PREP:
+            begin
+                if(aad_block_idx < block_count(aad_len_bits))
+                begin
+                ghash_src_data      <= aad_data;
+                ghash_src_len_bits  <= aad_len_bits;
+                ghash_src_block_idx <= aad_block_idx;
+                state               <= ST_GHASH_AAD_PUSH;
+                end
+                else
+                begin
+                state <= ST_GHASH_CT_PREP;
+                end
             end
 
             ST_GHASH_AAD_PUSH:
             begin
-                if(aad_block_idx < block_count(aad_len_bits))
-                begin
-                ghash_block <= extract_block_1024(aad_data, aad_len_bits, aad_block_idx);
+                ghash_block <= extract_block_1024(ghash_src_data, ghash_src_len_bits, ghash_src_block_idx);
                 ghash_en    <= 1'b1;
                 state       <= ST_GHASH_AAD_WAIT;
-                end
-                else
-                begin
-                state <= ST_GHASH_CT_PUSH;
-                end
             end
 
             ST_GHASH_AAD_WAIT:
@@ -643,18 +687,18 @@ begin
                 if(ghash_done)
                 begin
                 aad_block_idx <= aad_block_idx + 4'd1;
-                state         <= ST_GHASH_AAD_PUSH;
+                state         <= ST_GHASH_AAD_PREP;
                 end
             end
 
-            ST_GHASH_CT_PUSH:
+            ST_GHASH_CT_PREP:
             begin
                 if(ct_block_idx < block_count(mode_reg ? ct_len_bits : pt_len_bits))
                 begin
-                ghash_block <= mode_reg ? extract_block_1024(ct_data, ct_len_bits, ct_block_idx)
-                                        : extract_block_1024(pc_out_buf, pt_len_bits, ct_block_idx);
-                ghash_en    <= 1'b1;
-                state       <= ST_GHASH_CT_WAIT;
+                ghash_src_data      <= mode_reg ? ct_data : pc_out_buf;
+                ghash_src_len_bits  <= mode_reg ? ct_len_bits : pt_len_bits;
+                ghash_src_block_idx <= ct_block_idx;
+                state               <= ST_GHASH_CT_PUSH;
                 end
                 else
                 begin
@@ -662,12 +706,19 @@ begin
                 end
             end
 
+            ST_GHASH_CT_PUSH:
+            begin
+                ghash_block <= extract_block_1024(ghash_src_data, ghash_src_len_bits, ghash_src_block_idx);
+                ghash_en    <= 1'b1;
+                state       <= ST_GHASH_CT_WAIT;
+            end
+
             ST_GHASH_CT_WAIT:
             begin
                 if(ghash_done)
                 begin
                 ct_block_idx <= ct_block_idx + 4'd1;
-                state        <= ST_GHASH_CT_PUSH;
+                state        <= ST_GHASH_CT_PREP;
                 end
             end
 

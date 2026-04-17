@@ -1,0 +1,3 @@
+"C:\Xilinx\Vivado\2021.1\bin\xvlog.bat" --sv C:/project/FPGA/rtl/IV_IN.v C:/project/FPGA/rtl/AAD_CT_IN.v C:/project/FPGA/rtl/GHASH.v C:/project/FPGA/rtl/ctr/aes_ctr_wrapper.v C:/project/FPGA/rtl/aes_core/sbox.v C:/project/FPGA/rtl/aes_core/s_box.v C:/project/FPGA/rtl/aes_core/s_row.v C:/project/FPGA/rtl/aes_core/m_col.v C:/project/FPGA/rtl/aes_core/KeyGeneration.v C:/project/FPGA/rtl/aes_core/addr.v C:/project/FPGA/rtl/aes_core/AES_e.v C:/project/FPGA/rtl/top.v C:/project/FPGA/tb/tb_aes_gcm_top_smoke_len.sv
+"C:\Xilinx\Vivado\2021.1\bin\xelab.bat" tb_aes_gcm_top_smoke_len -s tb_aes_gcm_top_smoke_len_snapshot
+"C:\Xilinx\Vivado\2021.1\bin\xsim.bat" tb_aes_gcm_top_smoke_len_snapshot -runall

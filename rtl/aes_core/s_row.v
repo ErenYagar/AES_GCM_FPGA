@@ -22,7 +22,7 @@ reg [7:0] state [0:15];
 
 reg start_detect_nxt1;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -96,7 +96,7 @@ begin
     end
 end
 reg [7:0] shifted [0:15]; 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -169,7 +169,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -193,7 +193,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -219,7 +219,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -245,7 +245,7 @@ begin
     end
 end
  
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -263,7 +263,7 @@ begin
     end
 end
 assign start_detect = start_nxt0 & !start_nxt1;
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin

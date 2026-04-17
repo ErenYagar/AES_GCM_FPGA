@@ -42,7 +42,7 @@ begin
 end
 endfunction
 
-always @(posedge clk or negedge rst_n)
+always @(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -78,7 +78,7 @@ AES_e g0
 .wordout(keystream)
 );
 
-always @(posedge clk or negedge rst_n)
+always @(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -93,7 +93,7 @@ begin
     end
 end
 
-always @(posedge clk or negedge rst_n)
+always @(posedge clk)
 begin
     if(!rst_n)
     begin

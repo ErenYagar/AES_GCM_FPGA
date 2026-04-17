@@ -9,7 +9,7 @@ output [7:0] co
 reg [7:0] c;
 assign co = c;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin

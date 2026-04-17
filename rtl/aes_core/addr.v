@@ -36,7 +36,7 @@ wire [127:0] key12;
 wire [127:0] key13;
 wire [127:0] key14;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -51,7 +51,7 @@ begin
 end
 assign start_detect = start_nxt0 & !start_nxt1;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -77,7 +77,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -96,7 +96,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -122,7 +122,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin

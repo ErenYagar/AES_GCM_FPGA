@@ -80,7 +80,7 @@ reg [127:0] din_lock_r;
 reg [127:0] data_out;
 wire [127:0] mcol;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -95,7 +95,7 @@ begin
 end
 assign start_detect = start_nxt0 & !start_nxt1;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -110,7 +110,7 @@ begin
 end
 assign start_detect = start_nxt0 & !start_nxt1;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -136,7 +136,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -162,7 +162,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -182,7 +182,7 @@ begin
 end
 
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin

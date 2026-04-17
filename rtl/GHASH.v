@@ -45,7 +45,7 @@ always @(*) begin
         v_next = (v_work >> 1);
 end
 
-always @(posedge clk or negedge rst_n) begin
+always @(posedge clk) begin
     if (!rst_n) begin
         state   <= ST_IDLE;
         bit_cnt <= 7'd0;

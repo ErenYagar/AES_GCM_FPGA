@@ -55,7 +55,7 @@ wire addr_fin;
 wire [127:0] addr_o;
 
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -70,7 +70,7 @@ begin
 end
 assign start_detect = start_nxt0 & !start_nxt1;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -83,7 +83,7 @@ begin
 end
 assign fin_detect = fin_AES & !fin_nxt0;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -111,7 +111,7 @@ end
 reg fin_r_d1;
 reg fin_r_d2;
 wire done;
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -126,7 +126,7 @@ begin
 end
 assign done = fin_r_d1 && !fin_r_d2;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -152,7 +152,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -171,7 +171,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -402,7 +402,7 @@ begin
     endcase
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin

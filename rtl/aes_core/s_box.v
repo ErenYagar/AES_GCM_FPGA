@@ -22,7 +22,7 @@ wire start_detect;
 wire [127:0] din_lock;
 wire [127:0] sbox;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -48,7 +48,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -74,7 +74,7 @@ begin
     end
 end
  
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -93,7 +93,7 @@ begin
 end
 assign start_detect = start_nxt0 & !start_nxt1;
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin
@@ -112,7 +112,7 @@ begin
     end
 end
 
-always@(posedge clk or negedge rst_n)
+always@(posedge clk)
 begin
     if(!rst_n)
     begin

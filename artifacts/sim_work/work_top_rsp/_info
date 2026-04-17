@@ -288,8 +288,8 @@ R6
 R7
 R8
 vtb_aes_gcm_top_rsp
-DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z12 !s110 1776334075
+Z12 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z13 !s110 1776341213
 !i10b 1
 !s100 CF=[V`:zE>HLa;nZ<f^kB0
 IX2Kf2JI=KjZBK<8Y>e@100
@@ -305,14 +305,38 @@ R3
 r1
 !s85 0
 31
-Z13 !s108 1776334075.000000
-Z14 !s107 C:\project\FPGA\tb\tb_aes_gcm_top_rsp.sv|C:\project\FPGA\rtl\top.v|
-Z15 !s90 -work|C:\project\FPGA\work_top_rsp|C:\project\FPGA\rtl\top.v|C:\project\FPGA\tb\tb_aes_gcm_top_rsp.sv|
+Z14 !s108 1776341213.000000
+Z15 !s107 C:\project\FPGA\tb\tb_aes_gcm_top_rsp.sv|C:\project\FPGA\rtl\top.v|
+Z16 !s90 -work|C:\project\FPGA\work_top_rsp|C:\project\FPGA\rtl\top.v|C:\project\FPGA\tb\tb_aes_gcm_top_rsp.sv|
+!i113 1
+R7
+R8
+vtb_aes_gcm_top_smoke_len
+R12
+!s110 1776337769
+!i10b 1
+!s100 k4MlYaYUi7]f0h6?oZ=U`0
+IXHHm4BC;QQV7bWCV[dC>z0
+R2
+!s105 tb_aes_gcm_top_smoke_len_sv_unit
+S1
+R0
+w1776337760
+8C:\project\FPGA\tb\tb_aes_gcm_top_smoke_len.sv
+FC:\project\FPGA\tb\tb_aes_gcm_top_smoke_len.sv
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1776337768.000000
+!s107 C:\project\FPGA\tb\tb_aes_gcm_top_smoke_len.sv|
+!s90 -work|C:\project\FPGA\work_top_rsp|C:\project\FPGA\tb\tb_aes_gcm_top_smoke_len.sv|
 !i113 1
 R7
 R8
 vtop
-R12
+R13
 !i10b 1
 !s100 G3dPaa4<RH`U1_oK79`W91
 I8^^LD2gi1PBL@^A`F7^i43
@@ -326,9 +350,9 @@ R3
 r1
 !s85 0
 31
-R13
 R14
 R15
+R16
 !i113 1
 R7
 R8

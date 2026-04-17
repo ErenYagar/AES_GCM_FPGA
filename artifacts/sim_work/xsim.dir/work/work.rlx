@@ -1,0 +1,17 @@
+0.7
+2020.2
+Jun 10 2021
+20:04:57
+C:/project/FPGA/rtl/AAD_CT_IN.v,1776347950,systemVerilog,,C:/project/FPGA/rtl/GHASH.v,,AAD_CT_IN,,,,,,,,
+C:/project/FPGA/rtl/GHASH.v,1776305213,systemVerilog,,C:/project/FPGA/rtl/ctr/aes_ctr_wrapper.v,,GHASH,,,,,,,,
+C:/project/FPGA/rtl/IV_IN.v,1776347950,systemVerilog,,C:/project/FPGA/rtl/AAD_CT_IN.v,,IV_IN,,,,,,,,
+C:/project/FPGA/rtl/aes_core/AES_e.v,1776231893,systemVerilog,,C:/project/FPGA/rtl/top.v,,AES_e,,,,,,,,
+C:/project/FPGA/rtl/aes_core/KeyGeneration.v,1776237807,systemVerilog,,C:/project/FPGA/rtl/aes_core/addr.v,,KeyGeneration,,,,,,,,
+C:/project/FPGA/rtl/aes_core/addr.v,1776231952,systemVerilog,,C:/project/FPGA/rtl/aes_core/AES_e.v,,addr,,,,,,,,
+C:/project/FPGA/rtl/aes_core/m_col.v,1776231940,systemVerilog,,C:/project/FPGA/rtl/aes_core/KeyGeneration.v,,m_col;multiply;multiplyByMat,,,,,,,,
+C:/project/FPGA/rtl/aes_core/s_box.v,1776231983,systemVerilog,,C:/project/FPGA/rtl/aes_core/s_row.v,,s_box,,,,,,,,
+C:/project/FPGA/rtl/aes_core/s_row.v,1776231928,systemVerilog,,C:/project/FPGA/rtl/aes_core/m_col.v,,s_row,,,,,,,,
+C:/project/FPGA/rtl/aes_core/sbox.v,1776232005,systemVerilog,,C:/project/FPGA/rtl/aes_core/s_box.v,,sbox,,,,,,,,
+C:/project/FPGA/rtl/ctr/aes_ctr_wrapper.v,1776314946,systemVerilog,,C:/project/FPGA/rtl/aes_core/sbox.v,,aes_ctr_wrapper,,,,,,,,
+C:/project/FPGA/rtl/top.v,1776344257,systemVerilog,,C:/project/FPGA/tb/tb_aes_gcm_top_smoke_len.sv,,top,,,,,,,,
+C:/project/FPGA/tb/tb_aes_gcm_top_smoke_len.sv,1776337760,systemVerilog,,,,tb_aes_gcm_top_smoke_len,,,,,,,,

@@ -48,27 +48,21 @@ reg          tag_ready_r;
 function [7:0] mask_last_byte;
 input [7:0] byte_in;
 input [10:0] total_bits;
-integer rem_bits;
-integer bit_idx;
 begin
-    rem_bits = total_bits % 8;
-
-    if ((total_bits == 0) || (rem_bits == 0))
-    begin
-    mask_last_byte = byte_in;
-    end
-    else
-    begin
-        mask_last_byte = 8'd0;
-        for (bit_idx = 0; bit_idx < rem_bits; bit_idx = bit_idx + 1)
-        begin
-            mask_last_byte[7 - bit_idx] = byte_in[7 - bit_idx];
-        end
-    end
+    case (total_bits[2:0])
+        3'd0: mask_last_byte = byte_in;
+        3'd1: mask_last_byte = {byte_in[7],   7'd0};
+        3'd2: mask_last_byte = {byte_in[7:6], 6'd0};
+        3'd3: mask_last_byte = {byte_in[7:5], 5'd0};
+        3'd4: mask_last_byte = {byte_in[7:4], 4'd0};
+        3'd5: mask_last_byte = {byte_in[7:3], 3'd0};
+        3'd6: mask_last_byte = {byte_in[7:2], 2'd0};
+        default: mask_last_byte = {byte_in[7:1], 1'b0};
+    endcase
 end
 endfunction
 
-always @(posedge clk or negedge rst_n)
+always @(posedge clk)
 begin
     if(!rst_n)
     begin

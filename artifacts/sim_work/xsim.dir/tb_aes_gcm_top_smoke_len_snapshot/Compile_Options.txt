@@ -1,0 +1,1 @@
+"tb_aes_gcm_top_smoke_len" -s "tb_aes_gcm_top_smoke_len_snapshot" -L "xil_defaultlib" -L "unisims_ver" -L "unimacro_ver" -L "secureip" -debug "typical" 
