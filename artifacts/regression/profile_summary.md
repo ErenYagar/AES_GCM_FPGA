@@ -1,0 +1,14 @@
+| run_id | profile | cases_total | normal_pass_cases | tamper_reject_cases | board_failures | repeat | log_path |
+|---|---|---:|---:|---:|---:|---:|---|
+| 20260420_075315_control_command_profile | control_command_profile.jsonl | 30 | 0 | 0 | 30 | 1 | C:\project\FPGA\artifacts\regression\20260420_075315_control_command_profile.jsonl |
+| 20260420_083034_control_command_smoke3 | control_command_smoke3.jsonl | 3 | 0 | 0 | 3 | 1 | C:\project\FPGA\artifacts\regression\20260420_083034_control_command_smoke3.jsonl |
+| 20260420_083108_control_command_smoke3 | control_command_smoke3.jsonl | 3 | 2 | 1 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_083108_control_command_smoke3.jsonl |
+| 20260420_084340_control_command_profile | control_command_profile.jsonl | 30 | 24 | 6 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_084340_control_command_profile.jsonl |
+| 20260420_084454_uav_telemetry_smoke12 | uav_telemetry_smoke12.jsonl | 12 | 8 | 4 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_084454_uav_telemetry_smoke12.jsonl |
+| 20260420_084548_video_microchunk_smoke12 | video_microchunk_smoke12.jsonl | 12 | 8 | 4 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_084548_video_microchunk_smoke12.jsonl |
+| 20260420_085713_uav_telemetry_profile | uav_telemetry_profile.jsonl | 30 | 24 | 6 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_085713_uav_telemetry_profile.jsonl |
+| 20260420_085757_video_microchunk_profile | video_microchunk_profile.jsonl | 30 | 24 | 6 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_085757_video_microchunk_profile.jsonl |
+| 20260420_085851_control_command_profile | control_command_profile.jsonl | 30 | 24 | 6 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_085851_control_command_profile.jsonl |
+| 20260420_090747_control_command_profile | control_command_profile.jsonl | 30 | 24 | 6 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_090747_control_command_profile.jsonl |
+| 20260420_090848_uav_telemetry_profile | uav_telemetry_profile.jsonl | 30 | 24 | 6 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_090848_uav_telemetry_profile.jsonl |
+| 20260420_091010_video_microchunk_profile | video_microchunk_profile.jsonl | 30 | 24 | 6 | 0 | 1 | C:\project\FPGA\artifacts\regression\20260420_091010_video_microchunk_profile.jsonl |

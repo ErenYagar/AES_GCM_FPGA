@@ -1,0 +1,1 @@
+--mt "off" -L "unisims_ver" "tb_fpga_top_arty_a7_uart" -s "tb_fpga_top_arty_a7_uart_snapshot_mt0" 

@@ -1,0 +1,1 @@
+"work.tb_fpga_top_arty_a7_uart_case_iv96_aad128_pt0_tag128" -s "uart_case_iv96_aad128_pt0_tag128" -debug "typical" 

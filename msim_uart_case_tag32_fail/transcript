@@ -1,0 +1,34 @@
+# vsim -c tb_fpga_top_arty_a7_uart_case_tag32_fail -do "run -all; quit -f" 
+# Start time: 08:17:42 on Apr 19,2026
+# Loading sv_std.std
+# Loading work.tb_fpga_top_arty_a7_uart_case_tag32_fail
+# Loading work.fpga_top_arty_a7_uart
+# Loading work.MMCME2_BASE
+# Loading work.BUFG
+# Loading work.top
+# Loading work.IV_IN
+# Loading work.AAD_CT_IN
+# Loading work.AES_e
+# Loading work.s_box
+# Loading work.sbox
+# Loading work.s_row
+# Loading work.m_col
+# Loading work.multiplyByMat
+# Loading work.multiply
+# Loading work.addr
+# Loading work.KeyGeneration
+# Loading work.aes_ctr_wrapper
+# Loading work.GHASH
+# Loading work.uart_rx
+# Loading work.uart_tx
+# ** Warning: (vsim-3017) C:/project/FPGA/rtl/fpga_top_arty_a7_uart.v(190): [TFMPC] - Too few port connections. Expected 18, found 17.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fpga_top_arty_a7_uart_case_tag32_fail/dut/u_mmcm File: C:/project/FPGA/tb/mmcm_stub.v
+# ** Warning: (vsim-3722) C:/project/FPGA/rtl/fpga_top_arty_a7_uart.v(190): [TFMPC] - Missing connection for port 'CLKFBOUTB'.
+# run -all
+# DEBUG eng_state=0 rx_state=0 run_request=0 result_valid=0 status=0xfe wait_watchdog=0 tag_count=0 pc_count=0
+# ** Fatal: UART receive timeout
+#    Time: 61380995 ns  Scope: tb_fpga_top_arty_a7_uart_case_tag32_fail.recv_byte_with_timeout File: C:/project/FPGA/tb/tb_fpga_top_arty_a7_uart_case_tag32_fail.sv Line: 112
+# ** Note: $finish    : C:/project/FPGA/tb/tb_fpga_top_arty_a7_uart_case_tag32_fail.sv(112)
+#    Time: 61380995 ns  Iteration: 0  Instance: /tb_fpga_top_arty_a7_uart_case_tag32_fail
+# End time: 08:19:45 on Apr 19,2026, Elapsed time: 0:02:03
+# Errors: 1, Warnings: 2

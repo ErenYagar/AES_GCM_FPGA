@@ -1,0 +1,40 @@
+# vsim -c tb_fpga_top_arty_a7_uart_seq_aad128_pt0_tag128 -do "run -all; quit -f" 
+# Start time: 09:13:35 on Apr 19,2026
+# Loading sv_std.std
+# Loading work.tb_fpga_top_arty_a7_uart_seq_aad128_pt0_tag128
+# Loading work.fpga_top_arty_a7_uart
+# Loading work.MMCME2_BASE
+# Loading work.BUFG
+# Loading work.top
+# Loading work.IV_IN
+# Loading work.AAD_CT_IN
+# Loading work.AES_e
+# Loading work.s_box
+# Loading work.sbox
+# Loading work.s_row
+# Loading work.m_col
+# Loading work.multiplyByMat
+# Loading work.multiply
+# Loading work.addr
+# Loading work.KeyGeneration
+# Loading work.aes_ctr_wrapper
+# Loading work.GHASH
+# Loading work.uart_rx
+# Loading work.uart_tx
+# ** Warning: (vsim-3017) C:/project/FPGA/rtl/fpga_top_arty_a7_uart.v(192): [TFMPC] - Too few port connections. Expected 18, found 17.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_fpga_top_arty_a7_uart_seq_aad128_pt0_tag128/dut/u_mmcm File: C:/project/FPGA/tb/mmcm_stub.v
+# ** Warning: (vsim-3722) C:/project/FPGA/rtl/fpga_top_arty_a7_uart.v(192): [TFMPC] - Missing connection for port 'CLKFBOUTB'.
+# run -all
+# SEQ PASS case=0
+# SEQ PASS case=1
+# SEQ PASS case=2
+# SEQ PASS case=3
+# SEQ PASS case=4
+# SEQ PASS case=5
+# SEQ PASS case=6
+# SEQ PASS case=7
+# UART wrapper sequential aad128/pt0/tag128 cases 0..7 completed.
+# ** Note: $finish    : C:/project/FPGA/tb/tb_fpga_top_arty_a7_uart_seq_aad128_pt0_tag128.sv(260)
+#    Time: 84295205 ns  Iteration: 1  Instance: /tb_fpga_top_arty_a7_uart_seq_aad128_pt0_tag128
+# End time: 09:16:29 on Apr 19,2026, Elapsed time: 0:02:54
+# Errors: 0, Warnings: 2

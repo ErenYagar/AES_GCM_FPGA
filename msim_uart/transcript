@@ -1,0 +1,28 @@
+# vsim -c tb_fpga_top_arty_a7_uart -do "run -all; quit -f" 
+# Start time: 17:16:54 on Apr 18,2026
+# Loading sv_std.std
+# Loading work.tb_fpga_top_arty_a7_uart
+# Loading work.fpga_top_arty_a7_uart
+# Loading work.BUFG
+# Loading work.top
+# Loading work.IV_IN
+# Loading work.AAD_CT_IN
+# Loading work.AES_e
+# Loading work.s_box
+# Loading work.sbox
+# Loading work.s_row
+# Loading work.m_col
+# Loading work.multiplyByMat
+# Loading work.multiply
+# Loading work.addr
+# Loading work.KeyGeneration
+# Loading work.aes_ctr_wrapper
+# Loading work.GHASH
+# Loading work.uart_rx
+# Loading work.uart_tx
+# run -all
+# UART protocol smoke completed.
+# ** Note: $finish    : ../tb/tb_fpga_top_arty_a7_uart.sv(187)
+#    Time: 9693095 ns  Iteration: 2  Instance: /tb_fpga_top_arty_a7_uart
+# End time: 17:17:09 on Apr 18,2026, Elapsed time: 0:00:15
+# Errors: 0, Warnings: 0

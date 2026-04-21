@@ -1,0 +1,1 @@
+-debug "typical" --snapshot "tb_onecase_iv8" "work.tb_aes_gcm_onecase_iv8_aad160_pt104_tag120" 

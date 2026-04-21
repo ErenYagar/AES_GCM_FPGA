@@ -1,0 +1,61 @@
+{
+  "COM4_owner": "python uart_aesgcm_rsp.py",
+  "case": {
+    "AAD": "",
+    "AADlen": 0,
+    "CT": "",
+    "Count": 4,
+    "FAIL": false,
+    "IV": "d8",
+    "IVlen": 8,
+    "Key": "bb0c22762ef1d89b9f5d32829c10ae53a715773c4cd71debc17af80ede2374ea",
+    "Keylen": 256,
+    "PT": "",
+    "PTlen": 0,
+    "Tag": "345a886233369f643b406f7b481cbb",
+    "Taglen": 120,
+    "global_index": 10519,
+    "mode": "dec",
+    "source_file": "C:\\project\\FPGA\\txt\\gcmDecrypt256.rsp",
+    "tuple": {
+      "AADlen": 0,
+      "Count": 4,
+      "IVlen": 8,
+      "PTlen": 0,
+      "Taglen": 120,
+      "mode": "dec"
+    }
+  },
+  "debug_dump": null,
+  "detail": "status=0xFF",
+  "global_index": 10519,
+  "observed": {
+    "ct": "",
+    "ct_bits": 0,
+    "pt": "",
+    "pt_bits": 0,
+    "status": 255,
+    "status_name": "AUTH_FAIL",
+    "tag": "",
+    "tag_bits": 0
+  },
+  "program_meta": {
+    "command": "C:\\Xilinx\\Vivado\\2021.1\\bin\\vivado.bat -mode batch -source C:\\project\\FPGA\\artifacts\\scripts\\program_uart_bit.tcl",
+    "duration_ms": 20293,
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "\n****** Vivado v2021.1 (64-bit)\n  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021\n  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021\n    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.\n\nsource {C:\\project\\FPGA\\artifacts\\scripts\\program_uart_bit.tcl}\n# set root \"C:/project/FPGA\"\n# set bitfile \"$root/artifacts/fpga_top_arty_a7_uart_fixed.bit\"\n# open_hw_manager\n# connect_hw_server\nINFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121\nINFO: [Labtools 27-2222] Launching hw_server...\nINFO: [Labtools 27-2221] Launch Output:\n\n****** Xilinx hw_server v2021.1\n  **** Build date : Jun 10 2021 at 20:17:23\n    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.\n\n\n\n\nINFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042\nINFO: [Labtools 27-3417] Launching cs_server...\nINFO: [Labtools 27-2221] Launch Output:\n\n\n******** Xilinx cs_server v2021.1\n  ****** Build date   : May 27 2021-01:32:33\n    **** Build number : 2021.1.1622050353\n      ** Copyright 2017-2026 Xilinx, Inc. All Rights Reserved.\n\n\n\nconnect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 1174.488 ; gain = 0.000\n# open_hw_target\nINFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319BE76DEA\n# current_hw_device [lindex [get_hw_devices xc7a100t_0] 0]\n# refresh_hw_device -update_hw_probes false [current_hw_device]\nINFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.\nrefresh_hw_device: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2131.168 ; gain = 956.680\n# set_property PROGRAM.FILE $bitfile [current_hw_device]\n# program_hw_devices [current_hw_device]\nINFO: [Labtools 27-3164] End of startup status: HIGH\n# close_hw_target\nINFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210319BE76DEA\n# disconnect_hw_server\n# close_hw_manager\n****** Webtalk v2021.1 (64-bit)\n  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021\n  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021\n    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.\n\nsource C:/project/FPGA/.Xil/Vivado-24744-DESKTOP-IO47298/webtalk/labtool_webtalk.tcl -notrace\nINFO: [Common 17-206] Exiting Webtalk at Sun Apr 19 18:27:35 2026...\n# exit\nINFO: [Common 17-206] Exiting Vivado at Sun Apr 19 18:27:35 2026...\n"
+  },
+  "repeat_index": 1,
+  "run_id": "decrypt_formal_firstfail_g7875-15749",
+  "source_file": "C:\\project\\FPGA\\txt\\gcmDecrypt256.rsp",
+  "timestamp": "2026-04-19T18:35:51",
+  "tuple": {
+    "AADlen": 0,
+    "Count": 4,
+    "IVlen": 8,
+    "PTlen": 0,
+    "Taglen": 120,
+    "mode": "dec"
+  }
+}

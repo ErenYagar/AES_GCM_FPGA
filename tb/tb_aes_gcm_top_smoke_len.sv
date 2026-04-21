@@ -66,6 +66,10 @@ module tb_aes_gcm_top_smoke_len;
 
     task automatic reset_env;
     begin
+        // Gate-level/timing netlist simulation often needs extra startup time
+        // to let global initialization and internal reset release settle.
+        repeat (20) @(posedge clk);
+
         @(posedge clk);
         rst <= 1'b1;
         mode <= 1'b0;
@@ -146,6 +150,7 @@ module tb_aes_gcm_top_smoke_len;
 
     initial begin
         integer byte_seen;
+        integer tag_byte_seen;
         integer wait_cycles;
         bit finished;
 
@@ -166,9 +171,10 @@ module tb_aes_gcm_top_smoke_len;
         send_field_1024(3'd5, {896'd0, TAG_EXP}, TAG_BITS);
 
         byte_seen = 0;
+        tag_byte_seen = 0;
         wait_cycles = 0;
         finished = 1'b0;
-        while ((wait_cycles < 8000) && !finished) begin
+        while ((wait_cycles < 50000) && !finished) begin
             @(posedge clk);
             wait_cycles = wait_cycles + 1;
             if (pc_ct_valid) begin
@@ -186,7 +192,11 @@ module tb_aes_gcm_top_smoke_len;
                 byte_seen = byte_seen + 1;
             end
 
-            if ((dut.state == 5'd0) && (byte_seen == ((PT_BITS + 7) / 8)))
+            if (tag_valid)
+                tag_byte_seen = tag_byte_seen + 1;
+
+            if ((byte_seen == ((PT_BITS + 7) / 8)) &&
+                (tag_byte_seen == ((TAG_BITS + 7) / 8)))
                 finished = 1'b1;
         end
 

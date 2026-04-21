@@ -1,0 +1,7 @@
+profile,case_count,normal_pass,tamper_reject_pass,board_failures
+control_command_full_run1,30,24,6,0
+uav_telemetry_full_run1,30,24,6,0
+video_microchunk_full_run1,30,24,6,0
+control_command_full_run2,30,24,6,0
+uav_telemetry_full_run2,30,24,6,0
+video_microchunk_full_run2,30,24,6,0

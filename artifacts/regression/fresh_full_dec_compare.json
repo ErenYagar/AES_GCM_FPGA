@@ -1,0 +1,56 @@
+{
+  "earliest_divergence": {
+    "global_index": 13131,
+    "reason": "field_mismatch",
+    "run_a": {
+      "actual_data": "",
+      "actual_tag": "",
+      "expected_data": "",
+      "expected_tag": "b74e4e13cdedfd44c25f98e20276a8f7",
+      "result": "PASS",
+      "rx_frame_hash": "sha256:4893dec1eacbaebc7d3513e97bfdeb542f5ebe8d1bf24ba76ae5182e0fd2bfac",
+      "status": "DEC_OK",
+      "status_code": 1,
+      "tuple": {
+        "AADlen": 0,
+        "Count": 6,
+        "IVlen": 1024,
+        "PTlen": 0,
+        "Taglen": 128,
+        "mode": "dec"
+      },
+      "tx_frame_hash": "sha256:ad2c734a779ef9b141cd92129c87da3b14ff6ffaf6d674d6323eba22e4a4c643"
+    },
+    "run_b": {
+      "actual_data": "",
+      "actual_tag": "",
+      "expected_data": "",
+      "expected_tag": "b74e4e13cdedfd44c25f98e20276a8f7",
+      "result": "FAIL",
+      "rx_frame_hash": "sha256:b96303d9cb6e28fe50093050d9c15e81c270be9bf5d1e27c831cb370f48ed2c9",
+      "status": "AUTH_FAIL",
+      "status_code": 255,
+      "tuple": {
+        "AADlen": 0,
+        "Count": 6,
+        "IVlen": 1024,
+        "PTlen": 0,
+        "Taglen": 128,
+        "mode": "dec"
+      },
+      "tx_frame_hash": "sha256:ad2c734a779ef9b141cd92129c87da3b14ff6ffaf6d674d6323eba22e4a4c643"
+    },
+    "tuple": {
+      "AADlen": 0,
+      "Count": 6,
+      "IVlen": 1024,
+      "PTlen": 0,
+      "Taglen": 128,
+      "mode": "dec"
+    }
+  },
+  "records_a": 7875,
+  "records_b": 7875,
+  "run_a": "C:\\project\\FPGA\\artifacts\\regression\\fresh_full_dec_run1.jsonl",
+  "run_b": "C:\\project\\FPGA\\artifacts\\regression\\fresh_full_dec_run2.jsonl"
+}

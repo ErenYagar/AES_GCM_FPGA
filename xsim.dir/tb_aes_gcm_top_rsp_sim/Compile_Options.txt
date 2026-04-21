@@ -1,0 +1,1 @@
+-debug "typical" -s "tb_aes_gcm_top_rsp_sim" "work.tb_aes_gcm_top_rsp" 

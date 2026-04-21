@@ -1,0 +1,376 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/project/FPGA/msim_onecase_tag32_zero_nogap
+vAAD_CT_IN
+Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z2 !s110 1776558067
+!i10b 1
+!s100 J=MIZ2JcR7OLQ?oUi`=lD0
+IOb?:1`GXJUQfHLAf@I[P^3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+!s105 AAD_CT_IN_v_unit
+S1
+R0
+Z4 w1776347950
+8C:\project\FPGA\rtl\AAD_CT_IN.v
+FC:\project\FPGA\rtl\AAD_CT_IN.v
+L0 3
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1776558067.000000
+Z7 !s107 C:\project\FPGA\tb\tb_onecase_tag32_zero_tagin_nogap.sv|C:\project\FPGA\rtl\top.v|C:\project\FPGA\rtl\aes_core\AES_e.v|C:\project\FPGA\rtl\aes_core\addr.v|C:\project\FPGA\rtl\aes_core\KeyGeneration.v|C:\project\FPGA\rtl\aes_core\m_col.v|C:\project\FPGA\rtl\aes_core\s_row.v|C:\project\FPGA\rtl\aes_core\s_box.v|C:\project\FPGA\rtl\aes_core\sbox.v|C:\project\FPGA\rtl\ctr\aes_ctr_wrapper.v|C:\project\FPGA\rtl\GHASH.v|C:\project\FPGA\rtl\AAD_CT_IN.v|C:\project\FPGA\rtl\IV_IN.v|
+Z8 !s90 -sv|C:\project\FPGA\rtl\IV_IN.v|C:\project\FPGA\rtl\AAD_CT_IN.v|C:\project\FPGA\rtl\GHASH.v|C:\project\FPGA\rtl\ctr\aes_ctr_wrapper.v|C:\project\FPGA\rtl\aes_core\sbox.v|C:\project\FPGA\rtl\aes_core\s_box.v|C:\project\FPGA\rtl\aes_core\s_row.v|C:\project\FPGA\rtl\aes_core\m_col.v|C:\project\FPGA\rtl\aes_core\KeyGeneration.v|C:\project\FPGA\rtl\aes_core\addr.v|C:\project\FPGA\rtl\aes_core\AES_e.v|C:\project\FPGA\rtl\top.v|C:\project\FPGA\tb\tb_onecase_tag32_zero_tagin_nogap.sv|
+!i113 1
+o-sv
+Z9 tCvgOpt 0
+n@a@a@d_@c@t_@i@n
+vaddr
+R1
+R2
+!i10b 1
+!s100 QlOOQeK^z;A^[B@k^SXWc1
+IOGUHnE^=RXUgj]LHiA<Wj3
+R3
+!s105 addr_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\aes_core\addr.v
+FC:\project\FPGA\rtl\aes_core\addr.v
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+vaes_ctr_wrapper
+R1
+R2
+!i10b 1
+!s100 j1lSLNW;fC29RLS=VjIZd0
+IB1c:djUBELdaC2LV2XWTR2
+R3
+!s105 aes_ctr_wrapper_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\ctr\aes_ctr_wrapper.v
+FC:\project\FPGA\rtl\ctr\aes_ctr_wrapper.v
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+vAES_e
+R1
+R2
+!i10b 1
+!s100 jH;a_FNl>cOcOV3<:Ddbd3
+I^j_GIG^emcO0Faf;gZ[CR2
+R3
+!s105 AES_e_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\aes_core\AES_e.v
+FC:\project\FPGA\rtl\aes_core\AES_e.v
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+n@a@e@s_e
+vGHASH
+R1
+R2
+!i10b 1
+!s100 :;kLG6L<3B5mCgmB>e_[51
+Icm_ENJ_2>BzH3<05AlimW1
+R3
+!s105 GHASH_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\GHASH.v
+FC:\project\FPGA\rtl\GHASH.v
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+n@g@h@a@s@h
+vIV_IN
+R1
+R2
+!i10b 1
+!s100 <EoZJVOz9J=Gk85;TnELe0
+I@AVE`_dN@91_h@Q8FAb5A0
+R3
+!s105 IV_IN_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\IV_IN.v
+FC:\project\FPGA\rtl\IV_IN.v
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+n@i@v_@i@n
+vKeyGeneration
+R1
+R2
+!i10b 1
+!s100 n3?f3P9l8>eBD^3Hn6C>_0
+I0D1[nO<jE_JRm`bV<TBm91
+R3
+!s105 KeyGeneration_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\aes_core\KeyGeneration.v
+FC:\project\FPGA\rtl\aes_core\KeyGeneration.v
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+n@key@generation
+vm_col
+R1
+R2
+!i10b 1
+!s100 8GYdXmDMim@`1MFN4B>EE1
+IPCcKoAi43X0g[1PNUfFRb0
+R3
+Z10 !s105 m_col_v_unit
+S1
+R0
+R4
+Z11 8C:\project\FPGA\rtl\aes_core\m_col.v
+Z12 FC:\project\FPGA\rtl\aes_core\m_col.v
+L0 60
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+vmultiply
+R1
+R2
+!i10b 1
+!s100 P=KII4QD4VQCD;`df^^681
+IobSJ6do?]fcaPTFeEJIY50
+R3
+R10
+S1
+R0
+R4
+R11
+R12
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+vmultiplyByMat
+R1
+R2
+!i10b 1
+!s100 UhM60];_QSVlH=Bil^7CE3
+Ij2eNE8UKeA:PlVU3l_0OV1
+R3
+R10
+S1
+R0
+R4
+R11
+R12
+L0 15
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+nmultiply@by@mat
+vs_box
+R1
+R2
+!i10b 1
+!s100 o@ho2gOceSb8I]7ADiBTE0
+ITM]kELMhGUm8`<KZMA>n72
+R3
+!s105 s_box_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\aes_core\s_box.v
+FC:\project\FPGA\rtl\aes_core\s_box.v
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+vs_row
+R1
+R2
+!i10b 1
+!s100 z<^_><R^XhgmTHG:YkPi?1
+Ii0aAFI1;=lIYSY5??hlf^3
+R3
+!s105 s_row_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\aes_core\s_row.v
+FC:\project\FPGA\rtl\aes_core\s_row.v
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+vsbox
+R1
+R2
+!i10b 1
+!s100 <KXB08>2^^lS@2[J05;Z`1
+IM@E8F<;>D9=8mP9mC9?R02
+R3
+!s105 sbox_v_unit
+S1
+R0
+R4
+8C:\project\FPGA\rtl\aes_core\sbox.v
+FC:\project\FPGA\rtl\aes_core\sbox.v
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+vtb_onecase_tag32_zero_tagin_nogap
+R1
+R2
+!i10b 1
+!s100 oe_>S@WFm5fIcXRGhM:Ue1
+Ij8nV5lo8_kRi??Y@k71dL3
+R3
+!s105 tb_onecase_tag32_zero_tagin_nogap_sv_unit
+S1
+R0
+w1776558052
+8C:\project\FPGA\tb\tb_onecase_tag32_zero_tagin_nogap.sv
+FC:\project\FPGA\tb\tb_onecase_tag32_zero_tagin_nogap.sv
+L0 2
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9
+vtop
+R1
+R2
+!i10b 1
+!s100 BM;iI5XZB`E>YbQEZZSQ;2
+IZER58Dd;0bi66:A?NoA`D3
+R3
+!s105 top_v_unit
+S1
+R0
+w1776388495
+8C:\project\FPGA\rtl\top.v
+FC:\project\FPGA\rtl\top.v
+L0 3
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+o-sv
+R9

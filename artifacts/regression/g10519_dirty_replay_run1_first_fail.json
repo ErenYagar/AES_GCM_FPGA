@@ -1,0 +1,61 @@
+{
+  "COM4_owner": "python uart_aesgcm_rsp.py",
+  "case": {
+    "AAD": "7810f34e1d6c3c924a1dfa9b77473b9f086a7e6a13a5d97422d902c66a7e7fb027ae724aa459ec70dca7661f24cc4d54",
+    "AADlen": 384,
+    "CT": "29fb6a2bcff53518c3cf1506108ac66e",
+    "Count": 8,
+    "FAIL": false,
+    "IV": "a095f1b220443e305b747841",
+    "IVlen": 96,
+    "Key": "72b3a2016e265f7a77f7253d2d4d8eebd5ffbf86ede800eec23bbac04436506e",
+    "Keylen": 256,
+    "PT": "40af0883dfad42bb582287668d34fe00",
+    "PTlen": 128,
+    "Tag": "e87ac36241c5e5693f201cf20a43",
+    "Taglen": 112,
+    "global_index": 8753,
+    "mode": "dec",
+    "source_file": "C:\\project\\FPGA\\txt\\gcmDecrypt256.rsp",
+    "tuple": {
+      "AADlen": 384,
+      "Count": 8,
+      "IVlen": 96,
+      "PTlen": 128,
+      "Taglen": 112,
+      "mode": "dec"
+    }
+  },
+  "debug_dump": null,
+  "detail": "status=0xFF",
+  "global_index": 8753,
+  "observed": {
+    "ct": "",
+    "ct_bits": 0,
+    "pt": "",
+    "pt_bits": 0,
+    "status": 255,
+    "status_name": "AUTH_FAIL",
+    "tag": "",
+    "tag_bits": 0
+  },
+  "program_meta": {
+    "command": "C:\\Xilinx\\Vivado\\2021.1\\bin\\vivado.bat -mode batch -source C:\\project\\FPGA\\artifacts\\scripts\\program_uart_bit.tcl",
+    "duration_ms": 24642,
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "\n****** Vivado v2021.1 (64-bit)\n  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021\n  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021\n    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.\n\nsource {C:\\project\\FPGA\\artifacts\\scripts\\program_uart_bit.tcl}\n# set root \"C:/project/FPGA\"\n# set bitfile \"$root/artifacts/fpga_top_arty_a7_uart_fixed.bit\"\n# open_hw_manager\n# connect_hw_server\nINFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121\nINFO: [Labtools 27-2222] Launching hw_server...\nINFO: [Labtools 27-2221] Launch Output:\n\n****** Xilinx hw_server v2021.1\n  **** Build date : Jun 10 2021 at 20:17:23\n    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.\n\n\n\n\nINFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:3042\nINFO: [Labtools 27-3417] Launching cs_server...\nINFO: [Labtools 27-2221] Launch Output:\n\n\n******** Xilinx cs_server v2021.1\n  ****** Build date   : May 27 2021-01:32:33\n    **** Build number : 2021.1.1622050353\n      ** Copyright 2017-2026 Xilinx, Inc. All Rights Reserved.\n\n\n\nconnect_hw_server: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 1134.617 ; gain = 0.000\n# open_hw_target\nINFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210319BE76DEA\n# current_hw_device [lindex [get_hw_devices xc7a100t_0] 0]\n# refresh_hw_device -update_hw_probes false [current_hw_device]\nINFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.\nrefresh_hw_device: Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2132.363 ; gain = 997.746\n# set_property PROGRAM.FILE $bitfile [current_hw_device]\n# program_hw_devices [current_hw_device]\nINFO: [Labtools 27-3164] End of startup status: HIGH\n# close_hw_target\nINFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210319BE76DEA\n# disconnect_hw_server\n# close_hw_manager\n****** Webtalk v2021.1 (64-bit)\n  **** SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021\n  **** IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021\n    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.\n\nsource C:/project/FPGA/.Xil/Vivado-14140-DESKTOP-IO47298/webtalk/labtool_webtalk.tcl -notrace\nINFO: [Common 17-206] Exiting Webtalk at Sun Apr 19 18:41:27 2026...\n# exit\nINFO: [Common 17-206] Exiting Vivado at Sun Apr 19 18:41:27 2026...\n"
+  },
+  "repeat_index": 1,
+  "run_id": "dirty_g10519_r1_g7875-10519",
+  "source_file": "C:\\project\\FPGA\\txt\\gcmDecrypt256.rsp",
+  "timestamp": "2026-04-19T18:44:10",
+  "tuple": {
+    "AADlen": 384,
+    "Count": 8,
+    "IVlen": 96,
+    "PTlen": 128,
+    "Taglen": 112,
+    "mode": "dec"
+  }
+}

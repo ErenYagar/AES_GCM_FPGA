@@ -1,0 +1,1 @@
+"work.tb_fpga_top_arty_a7_uart_case_tag104_pt256" -s "uart_case104_256" 
