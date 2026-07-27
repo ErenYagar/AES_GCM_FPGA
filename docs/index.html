@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="AES-GCM FPGA authenticated-encryption IP for secure IoT packet transmission.">
+    <title>AES-GCM FPGA | Secure IoT Packet Engine</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="AES-GCM FPGA home">AES-GCM<span> / FPGA</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#architecture" data-zh="架構" data-en="Architecture">架構</a>
+        <a href="#validation" data-zh="驗證結果" data-en="Validation">驗證結果</a>
+        <a href="#iot" data-zh="IoT實作" data-en="IoT Prototype">IoT實作</a>
+        <a href="#ip" data-zh="IP功能" data-en="IP Features">IP功能</a>
+      </nav>
+      <button class="language" id="languageToggle" type="button" aria-label="Switch language">EN</button>
+    </header>
+
+    <main id="top">
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <p class="eyebrow" data-zh="安全封包硬體加速" data-en="SECURE PACKET HARDWARE">安全封包硬體加速</p>
+          <h1 data-zh="把 IoT 封包安全，<em>搬進 FPGA。</em>" data-en="Bring secure IoT packets <em>into the FPGA.</em>">把 IoT 封包安全，<em>搬進 FPGA。</em></h1>
+          <p class="lede" data-zh="一個以 Verilog RTL 實作的 AES-GCM-256 認證加密 IP，從 AES、GCTR、GHASH 到 Arty A7 板級驗證，完整展示從核心到 IoT 系統的安全資料鏈。" data-en="A Verilog RTL AES-GCM-256 authenticated-encryption IP that spans AES, GCTR, GHASH, and Arty A7 board validation—from cryptographic core to an IoT security data path.">一個以 Verilog RTL 實作的 AES-GCM-256 認證加密 IP，從 AES、GCTR、GHASH 到 Arty A7 板級驗證，完整展示從核心到 IoT 系統的安全資料鏈。</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#validation" data-zh="查看實測成果" data-en="See measured results">查看實測成果</a>
+            <a class="button ghost" href="aes-gcm-ip.md" data-zh="閱讀 IP 文件" data-en="Read IP notes">閱讀 IP 文件</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="AES-GCM data path illustration">
+          <div class="panel-glow"></div>
+          <span class="chip-label">AES-GCM-256</span>
+          <div class="core-orbit">
+            <div class="core-node">AUTH<br><small>VERIFY</small></div>
+            <div class="orbit-node node-a">AES</div>
+            <div class="orbit-node node-b">GCTR</div>
+            <div class="orbit-node node-c">GHASH</div>
+          </div>
+          <div class="panel-footer"><span>125 MHz</span><span>1.065 Gbps</span><span>0 BRAM</span></div>
+        </div>
+      </section>
+
+      <section class="metrics wrap" id="validation">
+        <div class="section-heading">
+          <p class="eyebrow" data-zh="Frozen validation results" data-en="FROZEN VALIDATION RESULTS">Frozen validation results</p>
+          <h2 data-zh="每個數字，都對應一次可重現的測試。" data-en="Every number maps to a reproducible test.">每個數字，都對應一次可重現的測試。</h2>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card"><strong>59,161</strong><span data-zh="NIST 測試案例全部通過" data-en="NIST cases passed">NIST 測試案例全部通過</span></article>
+          <article class="metric-card accent"><strong>180</strong><span data-zh="UART FPGA 板級案例" data-en="UART board cases">UART FPGA 板級案例</span></article>
+          <article class="metric-card"><strong>144 / 36</strong><span data-zh="正常通過 / 竄改拒絕" data-en="normal pass / tamper reject">正常通過 / 竄改拒絕</span></article>
+          <article class="metric-card accent"><strong>0</strong><span data-zh="板端失敗案例" data-en="board failures">板端失敗案例</span></article>
+        </div>
+      </section>
+
+      <section class="architecture wrap" id="architecture">
+        <div class="section-heading split-heading">
+          <div><p class="eyebrow" data-zh="RTL architecture" data-en="RTL ARCHITECTURE">RTL architecture</p><h2 data-zh="封包進來，驗證後才放行。" data-en="Packets enter. Only verified data leaves.">封包進來，驗證後才放行。</h2></div>
+          <p data-zh="AES-GCM 同時提供機密性與完整性。AAD 會被驗證但不加密；任何 AAD、密文或 Tag 被改動，都會導向 AUTH_FAIL。" data-en="AES-GCM provides confidentiality and integrity together. AAD is authenticated but not encrypted; any AAD, ciphertext, or tag change leads to AUTH_FAIL.">AES-GCM 同時提供機密性與完整性。AAD 會被驗證但不加密；任何 AAD、密文或 Tag 被改動，都會導向 AUTH_FAIL。</p>
+        </div>
+        <div class="flow" role="img" aria-label="Packet flow through AES-GCM modules">
+          <div class="flow-box input"><span>01</span><strong data-zh="IoT 封包" data-en="IoT packet">IoT 封包</strong><small>AAD · IV · PAYLOAD</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box"><span>02</span><strong>AES / GCTR</strong><small data-zh="加密與解密" data-en="encrypt / decrypt">加密與解密</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box"><span>03</span><strong>GHASH</strong><small data-zh="完整性雜湊" data-en="integrity hash">完整性雜湊</small></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-box output"><span>04</span><strong data-zh="PASS / AUTH_FAIL" data-en="PASS / AUTH_FAIL">PASS / AUTH_FAIL</strong><small data-zh="驗證後放行" data-en="release after verify">驗證後放行</small></div>
+        </div>
+      </section>
+
+      <section class="iot wrap" id="iot">
+        <div class="section-heading"><p class="eyebrow" data-zh="IoT prototype" data-en="IOT PROTOTYPE">IoT prototype</p><h2 data-zh="從 FPGA 核心走到實際資料鏈。" data-en="From FPGA core to a real data path.">從 FPGA 核心走到實際資料鏈。</h2></div>
+        <div class="iot-grid">
+          <div class="iot-copy">
+            <p data-zh="Raspberry Pi 4 負責相機擷取、H.264 編碼與封包化；Arty A7-100T 執行 keyed-SPI AES-GCM-256 保護；PC 作為地面站接收並驗證資料。ML-KEM-768 與 HKDF-SHA256 用於 Session Key 衍生。" data-en="A Raspberry Pi 4 captures, encodes H.264, and packetizes data. An Arty A7-100T applies keyed-SPI AES-GCM-256 protection, while a PC acts as the ground station. ML-KEM-768 and HKDF-SHA256 derive the session key.">Raspberry Pi 4 負責相機擷取、H.264 編碼與封包化；Arty A7-100T 執行 keyed-SPI AES-GCM-256 保護；PC 作為地面站接收並驗證資料。ML-KEM-768 與 HKDF-SHA256 用於 Session Key 衍生。</p>
+            <div class="path"><span>Raspberry Pi 4</span><i>→</i><span class="path-active">Arty A7 FPGA</span><i>→</i><span>PC ground station</span></div>
+          </div>
+          <div class="iot-results">
+            <div><strong>900</strong><span data-zh="Command / ACK 全部配對，零遺失" data-en="command / ACK pairs, zero loss">Command / ACK 全部配對，零遺失</span></div>
+            <div><strong>0.984 <em>Mbps</em></strong><span data-zh="active verified rate" data-en="active verified rate">active verified rate</span></div>
+            <div><strong>0.477 <em>Mbps</em></strong><span data-zh="completion goodput" data-en="completion goodput">completion goodput</span></div>
+            <div><strong>12.515 <em>ms</em></strong><span data-zh="RTT median（p95 57.475 ms）" data-en="RTT median (p95 57.475 ms)">RTT median（p95 57.475 ms）</span></div>
+          </div>
+        </div>
+        <p class="note" data-zh="核心吞吐率與端到端速率分開呈現：1.065 Gbps 是 FPGA 內部 AES-GCM-256 core-only 數值，不是 PC、Wi-Fi、Raspberry Pi、SPI 與 FPGA 的總鏈路速率。" data-en="Core throughput and end-to-end rate are reported separately: 1.065 Gbps is the FPGA AES-GCM-256 core-only result, not the aggregate PC, Wi-Fi, Raspberry Pi, SPI, and FPGA link rate.">核心吞吐率與端到端速率分開呈現：1.065 Gbps 是 FPGA 內部 AES-GCM-256 core-only 數值，不是 PC、Wi-Fi、Raspberry Pi、SPI 與 FPGA 的總鏈路速率。</p>
+      </section>
+
+      <section class="ip wrap" id="ip">
+        <div class="section-heading split-heading"><div><p class="eyebrow" data-zh="IP capabilities" data-en="IP CAPABILITIES">IP capabilities</p><h2 data-zh="為安全封包而設計的可整合模組。" data-en="Integration-ready modules for secure packets.">為安全封包而設計的可整合模組。</h2></div></div>
+        <div class="feature-grid">
+          <article><span class="feature-number">01</span><h3>AES / GCTR</h3><p data-zh="支援 AES-GCM-128/192/256，處理加密、解密與 Counter mode 資料流。" data-en="Supports AES-GCM-128/192/256 for encryption, decryption, and counter-mode data flow.">支援 AES-GCM-128/192/256，處理加密、解密與 Counter mode 資料流。</p></article>
+          <article><span class="feature-number">02</span><h3>GHASH</h3><p data-zh="在 GF(2^128) 上計算 AAD 與 Ciphertext 的認證雜湊。" data-en="Computes the authentication hash of AAD and ciphertext over GF(2^128).">在 GF(2^128) 上計算 AAD 與 Ciphertext 的認證雜湊。</p></article>
+          <article><span class="feature-number">03</span><h3>UART / SPI</h3><p data-zh="透過既有的封包與介面包裝，連結 FPGA、MCU、Raspberry Pi 與 PC。" data-en="Packet and interface wrappers connect the FPGA with MCU, Raspberry Pi, and PC systems.">透過既有的封包與介面包裝，連結 FPGA、MCU、Raspberry Pi 與 PC。</p></article>
+          <article><span class="feature-number">04</span><h3>AUTH_FAIL</h3><p data-zh="Tag 驗證失敗時拒絕封包，不在完整性確認前釋出明文。" data-en="Rejects a packet on tag mismatch and does not release plaintext before integrity verification.">Tag 驗證失敗時拒絕封包，不在完整性確認前釋出明文。</p></article>
+        </div>
+      </section>
+
+      <section class="closing wrap">
+        <p class="eyebrow" data-zh="Project reference" data-en="PROJECT REFERENCE">Project reference</p>
+        <h2 data-zh="讓每一個封包，都能被證明是完整的。" data-en="Make every packet provably intact.">讓每一個封包，都能被證明是完整的。</h2>
+        <p data-zh="本展示頁根據 AES-GCM-256 FPGA 論文與 frozen regression summaries 整理。" data-en="This showcase is based on the AES-GCM-256 FPGA thesis and frozen regression summaries.">本展示頁根據 AES-GCM-256 FPGA 論文與 frozen regression summaries 整理。</p>
+        <a class="button primary" href="aes-gcm-ip.md" data-zh="開啟完整技術文件" data-en="Open full IP notes">開啟完整技術文件</a>
+      </section>
+    </main>
+    <footer class="footer wrap"><span>AES-GCM FPGA Secure IoT Packet Engine</span><span>Verilog RTL · Arty A7-100T · IoT Security</span></footer>
+    <script src="app.js"></script>
+  </body>
+</html>
