@@ -35,8 +35,6 @@ Core-only throughput and end-to-end transport metrics are reported separately. T
 
 Open `docs/index.html` locally, or enable GitHub Pages with the repository's `docs/` folder as the publishing source. The page includes a Traditional Chinese / English language switch.
 
-The portfolio is intentionally split into two interview themes: [AES-GCM FPGA IP Core](docs/projects/ip-core.html) for throughput/resource/power characterization, and [Secure IoT Packet Transmission](docs/projects/iot-system.html) for application-level integration and board validation.
-
 ## Reproduction and safety
 
 Use the existing project scripts and board notes for local reproduction. Do not commit keys, private packet captures, generated Vivado folders, WDB files, or personal thesis material. Hardware tests should only be run on the intended board and with the correct UART/SPI wiring.
