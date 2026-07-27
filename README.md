@@ -8,9 +8,9 @@ An FPGA-based AES-GCM authenticated-encryption project for secure IoT packet tra
 - IoT-inspired packet profiles for control commands, UAV telemetry, and video micro-chunks.
 - UART and keyed-SPI integration paths for board-level packet transport.
 - 59,161 NIST `.rsp` encryption, decryption, and tag-mismatch cases passed.
-- 180 UART board cases passed: 144 normal cases and 36 tamper-rejection cases.
-- AES-GCM-256 core-only throughput: **1.065 Gbps** at 125 MHz with a 64 KiB payload.
-- Core implementation snapshot: 4,506 LUT, 3,957 FF, 0 BRAM, and 0 DSP.
+- Six UART-over-COM4 packet-profile runs completed with zero board failures: 72 encryption cases passed, 72 decryption cases passed, and 36 AAD/ciphertext/tag tamper cases were rejected.
+- Cycle-count-derived AES-GCM-256 throughput: **1.065 Gbps** at 125 MHz for a 64 KiB payload on the Stage 8 internal-traffic datapath. Both the traffic source and sink were inside the FPGA.
+- Final-routed Stage 8 internal-traffic top on the Arty A7-100T: 4,506 LUT, 3,957 FF, 0 BRAM, and 0 DSP at 125 MHz.
 - End-to-end prototype with Raspberry Pi 4, Arty FPGA, and a PC ground station.
 
 ## Repository map
@@ -23,13 +23,12 @@ An FPGA-based AES-GCM authenticated-encryption project for secure IoT packet tra
 | `hardware/` | Secure telemetry interface board design and release notes |
 | `docs/aes-gcm-ip.md` | Public IP architecture and integration notes |
 | `docs/index.html` | Bilingual project showcase website |
-| `論文/01_論文/M1181422.pdf` | Local thesis source; not included in the public release by default |
 
 ## Validation scope
 
 The public summary uses frozen results only. The three packet profiles each contain 30 cases per run: 12 encrypt, 12 decrypt, 2 AAD tamper, 2 ciphertext tamper, and 2 tag tamper cases. Two runs were completed for each profile with zero board failures.
 
-Core-only throughput and end-to-end transport metrics are reported separately. The 1.065 Gbps figure is the FPGA AES-GCM-256 core rate, not a PC/Wi-Fi/Raspberry Pi/SPI-to-FPGA link rate.
+Core-only throughput and end-to-end transport metrics are reported separately. The 1.065 Gbps figure is cycle-count-derived from the Stage 8 internal-traffic datapath with both the source and sink inside the FPGA; it is not a UART, SPI, wireless, or PC/Wi-Fi/Raspberry Pi/FPGA end-to-end rate.
 
 ## Website
 
@@ -39,8 +38,8 @@ The portfolio is split into two interview themes: [AES-GCM FPGA IP Core](docs/pr
 
 ## Reproduction and safety
 
-Use the existing project scripts and board notes for local reproduction. Do not commit keys, private packet captures, generated Vivado folders, WDB files, or personal thesis material. Hardware tests should only be run on the intended board and with the correct UART/SPI wiring.
+Use the available project scripts, board notes, and preserved summaries to trace and reproduce the published results within their stated hardware and measurement boundaries. Do not commit keys, private packet captures, generated Vivado folders, WDB files, or personal thesis material. Hardware tests should only be run on the intended board and with the correct UART/SPI wiring.
 
 ## Thesis reference
 
-The project results are summarized from the thesis **Design and Board-Level Validation of an AES-GCM-256 FPGA Encryption, Decryption, and Authentication System for IoT Packet Transmission**. The full PDF remains a local source document unless a separate publication decision is made.
+The project results are summarized from the thesis **Design and Board-Level Validation of an AES-GCM-256 FPGA Encryption, Decryption, and Authentication System for IoT Packet Transmission**. The public repository excludes the full thesis PDF, personal material, secret keys, private captures, and generated tool databases unless a separate publication decision is made.
