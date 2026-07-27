@@ -29,7 +29,7 @@ Each profile run contains 30 cases: 12 encryption, 12 decryption, 2 AAD-tamper, 
 
 ## 4. System integration
 
-The prototype uses a Raspberry Pi 4 for camera capture, H.264 processing, and packetization; an Arty A7-100T FPGA for keyed-SPI AES-GCM-256 protection; and a PC as the ground station. ML-KEM-768 and HKDF-SHA256 are used in the prototype session-key derivation flow.
+The prototype uses a Raspberry Pi 4 for camera capture, H.264 processing, and packetization; an Arty A7-100T FPGA for keyed-SPI AES-GCM-256 protection; and a PC as the ground station. Host-side ML-KEM-768 and HKDF-SHA256 establish and derive the AES-256 session material; the resulting key and salt are provisioned to the FPGA through the keyed-SPI control path. ML-KEM and HKDF are not implemented as FPGA accelerator cores in this project.
 
 ## 5. Frozen results
 
@@ -37,15 +37,18 @@ The prototype uses a Raspberry Pi 4 for camera capture, H.264 processing, and pa
 |---|---:|
 | NIST AES-GCM-128/192/256 cases | 59,161 passed |
 | UART board cases | 180 |
-| Normal board cases | 144 passed |
+| Normal encryption board cases | 72 passed |
+| Normal decryption board cases | 72 passed |
 | Tamper-rejection board cases | 36 passed |
 | Board failures | 0 |
-| AES-GCM-256 core throughput | 1.065 Gbps |
+| AES-GCM-256 Stage 8 internal-traffic throughput | 1.065 Gbps, cycle-count-derived |
 | Core clock / payload | 125 MHz / 64 KiB |
-| Core resources | 4,506 LUT; 3,957 FF; 0 BRAM; 0 DSP |
-| Command/ACK transactions | 900 matched; 0 lost |
+| Stage 8 internal-traffic routed-top resources | 4,506 LUT; 3,957 FF; 0 BRAM; 0 DSP |
+| Protected command/ACK transport test | 900/900 matched; 0 transport loss |
 
-The core-only rate must not be interpreted as the end-to-end PC, Wi-Fi, Raspberry Pi, SPI, and FPGA transport rate. In the integrated prototype, the active verified rate was 0.984 Mbps and completion goodput was 0.477 Mbps. These measurements include the surrounding software and transport path.
+The core-only rate must not be interpreted as UART, SPI, wireless, or end-to-end PC/Wi-Fi/Raspberry Pi/FPGA throughput. Both the traffic source and sink were inside the FPGA. In one representative end-to-end run, 237,600 verified payload bytes produced a 0.984 Mbps active verified receive rate over the active 1.931620 s receive window and 0.477 Mbps completion goodput over the full 3.989026 s completion window. The two rates use different time boundaries and are not interchangeable.
+
+The 900 matched command/ACK results demonstrate protected transport behavior. The returned ACKs were controlled `DENIED` responses and do not demonstrate completion of a real flight-control action. ReplayGuard logic is implemented in the Pi command bridge and PC receiver, but the preserved negative-test evidence covers offline receiver injection rather than a demonstrated live Wi-Fi replay attack.
 
 ## 6. Integration checklist
 
@@ -57,4 +60,4 @@ The core-only rate must not be interpreted as the end-to-end PC, Wi-Fi, Raspberr
 
 ## 7. Public-release boundary
 
-This document intentionally describes the interface and verified behavior without publishing secret keys, private captures, generated simulator databases, or the full thesis PDF. Refer to `artifacts/regression/profile_thesis_summary.md` for the frozen packet-profile totals.
+This public note intentionally describes the interface, measurement boundaries, and verified behavior without publishing secret keys, private captures, generated simulator databases, personal material, or the full thesis PDF. Refer to `artifacts/regression/profile_thesis_summary.md` for the frozen packet-profile totals.
