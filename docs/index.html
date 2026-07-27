@@ -51,7 +51,7 @@
       <section class="metrics wrap" id="validation">
         <div class="section-heading">
           <p class="eyebrow" data-zh="Frozen validation results" data-en="FROZEN VALIDATION RESULTS">Frozen validation results</p>
-          <h2 data-zh="每個數字，都對應一次可重現的測試。" data-en="Every number maps to a reproducible test.">每個數字，都對應一次可重現的測試。</h2>
+          <h2 data-zh="每個公開數字，都可追溯至保存的測試摘要或量測紀錄。" data-en="Every published metric is traceable to a preserved test summary or measurement record.">每個公開數字，都可追溯至保存的測試摘要或量測紀錄。</h2>
         </div>
         <div class="metric-grid">
           <article class="metric-card"><strong>59,161</strong><span data-zh="NIST 測試案例全部通過" data-en="NIST cases passed">NIST 測試案例全部通過</span></article>
@@ -81,17 +81,17 @@
         <div class="section-heading"><p class="eyebrow" data-zh="IoT prototype" data-en="IOT PROTOTYPE">IoT prototype</p><h2 data-zh="從 FPGA 核心走到實際資料鏈。" data-en="From FPGA core to a real data path.">從 FPGA 核心走到實際資料鏈。</h2></div>
         <div class="iot-grid">
           <div class="iot-copy">
-            <p data-zh="Raspberry Pi 4 負責相機擷取、H.264 編碼與封包化；Arty A7-100T 執行 keyed-SPI AES-GCM-256 保護；PC 作為地面站接收並驗證資料。ML-KEM-768 與 HKDF-SHA256 用於 Session Key 衍生。" data-en="A Raspberry Pi 4 captures, encodes H.264, and packetizes data. An Arty A7-100T applies keyed-SPI AES-GCM-256 protection, while a PC acts as the ground station. ML-KEM-768 and HKDF-SHA256 derive the session key.">Raspberry Pi 4 負責相機擷取、H.264 編碼與封包化；Arty A7-100T 執行 keyed-SPI AES-GCM-256 保護；PC 作為地面站接收並驗證資料。ML-KEM-768 與 HKDF-SHA256 用於 Session Key 衍生。</p>
+            <p data-zh="Raspberry Pi 4 負責相機擷取、H.264 編碼與封包化；Arty A7-100T 執行 keyed-SPI AES-GCM-256 保護；PC 作為地面站。主機端 ML-KEM-768 與 HKDF-SHA256 衍生 AES-256 session material，再將 key 與 salt 載入 FPGA；本專案未將 ML-KEM 或 HKDF 實作成 FPGA 核心。" data-en="A Raspberry Pi 4 captures, encodes H.264, and packetizes data; an Arty A7-100T applies keyed-SPI AES-GCM-256 protection; and a PC acts as the ground station. Host-side ML-KEM-768 and HKDF-SHA256 derive AES-256 session material, then provision the key and salt to the FPGA; ML-KEM and HKDF are not FPGA cores in this project.">Raspberry Pi 4 負責相機擷取、H.264 編碼與封包化；Arty A7-100T 執行 keyed-SPI AES-GCM-256 保護；PC 作為地面站。主機端 ML-KEM-768 與 HKDF-SHA256 衍生 AES-256 session material，再將 key 與 salt 載入 FPGA；本專案未將 ML-KEM 或 HKDF 實作成 FPGA 核心。</p>
             <div class="path"><span>Raspberry Pi 4</span><i>→</i><span class="path-active">Arty A7 FPGA</span><i>→</i><span>PC ground station</span></div>
           </div>
           <div class="iot-results">
-            <div><strong>900</strong><span data-zh="Command / ACK 全部配對，零遺失" data-en="command / ACK pairs, zero loss">Command / ACK 全部配對，零遺失</span></div>
-            <div><strong>0.984 <em>Mbps</em></strong><span data-zh="active verified rate" data-en="active verified rate">active verified rate</span></div>
-            <div><strong>0.477 <em>Mbps</em></strong><span data-zh="completion goodput" data-en="completion goodput">completion goodput</span></div>
+            <div><strong>900</strong><span data-zh="受保護 Command / ACK：900／900 配對，傳輸零遺失（測試用 DENIED ACK）" data-en="protected command / ACK: 900/900 matched, zero transport loss (controlled DENIED ACKs)">受保護 Command / ACK：900／900 配對，傳輸零遺失（測試用 DENIED ACK）</span></div>
+            <div><strong>0.984 <em>Mbps</em></strong><span data-zh="代表性 run：active verified receive rate" data-en="representative run: active verified receive rate">代表性 run：active verified receive rate</span></div>
+            <div><strong>0.477 <em>Mbps</em></strong><span data-zh="代表性 run：full-window completion goodput" data-en="representative run: full-window completion goodput">代表性 run：full-window completion goodput</span></div>
             <div><strong>12.515 <em>ms</em></strong><span data-zh="RTT median（p95 57.475 ms）" data-en="RTT median (p95 57.475 ms)">RTT median（p95 57.475 ms）</span></div>
           </div>
         </div>
-        <p class="note" data-zh="核心吞吐率與端到端速率分開呈現：1.065 Gbps 是 FPGA 內部 AES-GCM-256 core-only 數值，不是 PC、Wi-Fi、Raspberry Pi、SPI 與 FPGA 的總鏈路速率。" data-en="Core throughput and end-to-end rate are reported separately: 1.065 Gbps is the FPGA AES-GCM-256 core-only result, not the aggregate PC, Wi-Fi, Raspberry Pi, SPI, and FPGA link rate.">核心吞吐率與端到端速率分開呈現：1.065 Gbps 是 FPGA 內部 AES-GCM-256 core-only 數值，不是 PC、Wi-Fi、Raspberry Pi、SPI 與 FPGA 的總鏈路速率。</p>
+        <p class="note" data-zh="1.065 Gbps 是 Stage 8 internal-traffic datapath 在 125 MHz、64 KiB payload 下依 cycle count 計算的 core-only 結果，資料源與終點均在 FPGA 內；不是 UART、SPI、無線或 Pi／FPGA／PC 端到端速率。0.984 與 0.477 Mbps 為同一代表性 E2E run 的不同時間窗。" data-en="The 1.065 Gbps result is cycle-count-derived for the Stage 8 internal-traffic datapath at 125 MHz with a 64 KiB payload; both source and sink are inside the FPGA. It is not UART, SPI, wireless, or Pi/FPGA/PC end-to-end throughput. The 0.984 and 0.477 Mbps figures use different windows from one representative E2E run.">1.065 Gbps 是 Stage 8 internal-traffic datapath 在 125 MHz、64 KiB payload 下依 cycle count 計算的 core-only 結果，資料源與終點均在 FPGA 內；不是 UART、SPI、無線或 Pi／FPGA／PC 端到端速率。0.984 與 0.477 Mbps 為同一代表性 E2E run 的不同時間窗。</p>
       </section>
 
       <section class="ip wrap" id="ip">
@@ -108,7 +108,7 @@
         <p class="eyebrow" data-zh="Project reference" data-en="PROJECT REFERENCE">Project reference</p>
         <h2 data-zh="讓每一個封包，都能被證明是完整的。" data-en="Make every packet provably intact.">讓每一個封包，都能被證明是完整的。</h2>
         <p data-zh="本展示頁根據 AES-GCM-256 FPGA 論文與 frozen regression summaries 整理。" data-en="This showcase is based on the AES-GCM-256 FPGA thesis and frozen regression summaries.">本展示頁根據 AES-GCM-256 FPGA 論文與 frozen regression summaries 整理。</p>
-        <a class="button primary" href="aes-gcm-ip.md" data-zh="開啟完整技術文件" data-en="Open full IP notes">開啟完整技術文件</a>
+        <a class="button primary" href="aes-gcm-ip.md" data-zh="閱讀公開 IP 摘要" data-en="Read public IP notes">閱讀公開 IP 摘要</a>
       </section>
     </main>
     <footer class="footer wrap"><span>AES-GCM FPGA Secure IoT Packet Engine</span><span>Verilog RTL · Arty A7-100T · IoT Security</span></footer>
