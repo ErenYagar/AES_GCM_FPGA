@@ -1,0 +1,30 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Sat Aug 15 10:06:37 2026
+| Host         : DESKTOP-IO47298 running 64-bit major release  (build 9200)
+| Command      : report_design_analysis -logic_level_distribution -logic_level_dist_paths 1000 -file C:/project/FPGA2/artifacts/工程報告(engineering_reports)/凍結UART(frozen_uart)/報告(reports)/design_analysis_logic_levels.rpt
+| Design       : fpga_top_arty_a7_uart
+| Device       : xc7a100t
+| Design State : Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Design Analysis
+
+Table of Contents
+-----------------
+1. Logic Level Distribution
+
+1. Logic Level Distribution
+---------------------------
+
++-----------------+-------------+----+-----+---+---+---+---+---+
+| End Point Clock | Requirement |  1 |  2  | 3 | 4 | 5 | 6 | 7 |
++-----------------+-------------+----+-----+---+---+---+---+---+
+| core_clk        | 40.000ns    | 13 | 961 | 0 | 0 | 0 | 0 | 0 |
+| sys_clk_pin     | 10.000ns    |  2 |   6 | 4 | 4 | 4 | 4 | 2 |
++-----------------+-------------+----+-----+---+---+---+---+---+
+* Columns represent the logic levels per end point clock
+** Distribution is for top worst 1000 paths
+
+

@@ -1,0 +1,121 @@
+validation_result=PASS
+passed_checks=116
+failed_checks=0
+
+[PASS]
+report exists and is non-empty: timing_summary.rpt
+report exists and is non-empty: critical_paths_setup_top10.rpt
+report exists and is non-empty: critical_paths_hold_top10.rpt
+report exists and is non-empty: utilization.rpt
+report exists and is non-empty: utilization_hierarchical.rpt
+report exists and is non-empty: route_status.rpt
+report exists and is non-empty: drc.rpt
+report exists and is non-empty: methodology.rpt
+report exists and is non-empty: design_analysis_timing_setup.rpt
+report exists and is non-empty: design_analysis_timing_hold.rpt
+report exists and is non-empty: design_analysis_complexity.rpt
+report exists and is non-empty: design_analysis_congestion.rpt
+report exists and is non-empty: design_analysis_logic_levels.rpt
+report exists and is non-empty: design_analysis_qor_summary.rpt
+report exists and is non-empty: qor_assessment.rpt
+report exists and is non-empty: clock_interaction.rpt
+report exists and is non-empty: cdc.rpt
+report exists and is non-empty: check_timing.rpt
+report exists and is non-empty: clocks.rpt
+report exists and is non-empty: clock_networks.rpt
+report exists and is non-empty: power.rpt
+timing signoff row is WNS 7.376, TNS 0, WHS 0.016, THS 0 with no failing endpoints
+Vivado reports all timing constraints met
+42,484 routable nets are fully routed
+route status has zero routing errors
+DRC is fully routed with zero violations
+checkpoint re-open validation: checkpoint_open=PASS
+checkpoint re-open validation: vivado_version=2021.1
+checkpoint re-open validation: part=xc7a100tcsg324-1
+checkpoint re-open validation: setup_wns_ns=7.376
+checkpoint re-open validation: hold_whs_ns=0.016
+checkpoint re-open validation: drc_violation_count=0
+checkpoint re-open validation: unrouted_net_count=0
+checkpoint re-open validation: clock=sys_clk_pin,period_ns=10.000
+checkpoint re-open validation: clock=core_clk,period_ns=40.000
+routed DCP exists and is non-trivial
+engineering report index exists and is non-empty
+Vivado version matches in cdc.rpt
+design name matches in cdc.rpt
+device family matches in cdc.rpt
+Vivado version matches in check_timing.rpt
+design name matches in check_timing.rpt
+device family matches in check_timing.rpt
+Vivado version matches in clocks.rpt
+design name matches in clocks.rpt
+device family matches in clocks.rpt
+Vivado version matches in clock_interaction.rpt
+design name matches in clock_interaction.rpt
+device family matches in clock_interaction.rpt
+Vivado version matches in clock_networks.rpt
+design name matches in clock_networks.rpt
+device family matches in clock_networks.rpt
+Vivado version matches in critical_paths_hold_top10.rpt
+design name matches in critical_paths_hold_top10.rpt
+device family matches in critical_paths_hold_top10.rpt
+Vivado version matches in critical_paths_setup_top10.rpt
+design name matches in critical_paths_setup_top10.rpt
+device family matches in critical_paths_setup_top10.rpt
+Vivado version matches in design_analysis_complexity.rpt
+design name matches in design_analysis_complexity.rpt
+device family matches in design_analysis_complexity.rpt
+Vivado version matches in design_analysis_congestion.rpt
+design name matches in design_analysis_congestion.rpt
+device family matches in design_analysis_congestion.rpt
+Vivado version matches in design_analysis_logic_levels.rpt
+design name matches in design_analysis_logic_levels.rpt
+device family matches in design_analysis_logic_levels.rpt
+Vivado version matches in design_analysis_qor_summary.rpt
+design name matches in design_analysis_qor_summary.rpt
+device family matches in design_analysis_qor_summary.rpt
+Vivado version matches in design_analysis_timing_hold.rpt
+design name matches in design_analysis_timing_hold.rpt
+device family matches in design_analysis_timing_hold.rpt
+Vivado version matches in design_analysis_timing_setup.rpt
+design name matches in design_analysis_timing_setup.rpt
+device family matches in design_analysis_timing_setup.rpt
+Vivado version matches in drc.rpt
+design name matches in drc.rpt
+device family matches in drc.rpt
+Vivado version matches in methodology.rpt
+design name matches in methodology.rpt
+device family matches in methodology.rpt
+Vivado version matches in power.rpt
+device family matches in power.rpt
+Vivado version matches in qor_assessment.rpt
+design name matches in qor_assessment.rpt
+device family matches in qor_assessment.rpt
+Vivado version matches in timing_summary.rpt
+design name matches in timing_summary.rpt
+device family matches in timing_summary.rpt
+Vivado version matches in utilization.rpt
+design name matches in utilization.rpt
+device family matches in utilization.rpt
+Vivado version matches in utilization_hierarchical.rpt
+design name matches in utilization_hierarchical.rpt
+device family matches in utilization_hierarchical.rpt
+SVG parses and is non-empty: elaborated_rtl_top.svg
+SVG parses and is non-empty: elaborated_aes_gcm_core.svg
+SVG parses and is non-empty: synthesized_top_netlist.svg
+SVG parses and is non-empty: synthesized_crypto_datapath.svg
+SVG parses and is non-empty: worst_setup_critical_path.svg
+PNG verifies at report resolution: implemented_device_placement.png
+PNG verifies at report resolution: worst_setup_path_routing_resources.png
+all RTL/XDC SHA-256 values still match the build manifest
+new/frozen timing parity token: 7.376
+new/frozen timing parity token: 0.016
+new/frozen timing parity token: 58921
+new/frozen utilization parity: | Slice LUTs              | 26716
+new/frozen utilization parity: | Slice Registers         | 21970
+new/frozen utilization parity: | Block RAM Tile    | 52.5
+new/frozen utilization parity: | DSPs      |    0
+new/frozen DRC parity: zero violations
+package contains no generated *.bit hardware image
+package contains no generated *.bin hardware image
+package contains no generated *.ltx hardware image
+no tracked RTL/XDC/existing script/profile changes

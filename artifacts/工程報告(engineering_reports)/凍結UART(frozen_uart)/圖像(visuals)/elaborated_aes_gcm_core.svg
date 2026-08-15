@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 240 330"
+     preserveAspectRatio="xMidYMid meet"
+     version="1.1"
+     baseProfile="full"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+     xml:space="preserve">
+<title>fpga_top_arty_a7_uart</title>
+<desc>Nlview schematic (SVG)</desc>
+<clipPath id="clippingbbox">
+<rect x="0" y="0" width="330" height="240" />
+</clipPath>
+<g stroke="#19b400"
+   stroke-width="1"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-miterlimit="4"
+   stroke-dasharray="none"
+   stroke-dashoffset="0"
+   fill="none"
+   font-family="Helvetica"
+   font-style="normal"
+   font-size="12"
+   writing-mode="lr-tb"
+   cursor="crosshair"
+   transform="rotate(-90) translate(-330)"
+   clip-path="url(#clippingbbox)">
+<path d="M0 0h330v241h-330z" stroke="none" fill="white" />
+<path d="M120 28h60v182h-60z" stroke="none" fill="#dfebf8" />
+<g stroke="black">
+<path d="M120 28h60v182h-60z" />
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M131 33v12" />
+<path d="M125 39h12" />
+</g>
+<g stroke="black">
+<path d="M123 31h16v16h-16z" />
+<text x="150" y="26" fill="black" stroke-width="0" text-anchor="middle">u_core</text>
+<text x="150" y="212" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">top</text>
+<path d="M110 60h10" />
+<text x="118" y="59" fill="black" stroke-width="0" font-size="10" text-anchor="end">clk</text>
+<path d="M110 120h10" />
+<text x="118" y="119" fill="black" stroke-width="0" font-size="10" text-anchor="end">in_valid</text>
+<path d="M110 160h10" />
+<text x="118" y="159" fill="black" stroke-width="0" font-size="10" text-anchor="end">last</text>
+<path d="M110 180h10" />
+<text x="118" y="179" fill="black" stroke-width="0" font-size="10" text-anchor="end">mode</text>
+<path d="M190 120h-10" />
+<text x="182" y="119" fill="black" stroke-width="0" font-size="10">pc_ct_valid</text>
+<path d="M110 200h10" />
+<text x="118" y="199" fill="black" stroke-width="0" font-size="10" text-anchor="end">rst</text>
+<path d="M190 160h-10" />
+<text x="182" y="159" fill="black" stroke-width="0" font-size="10">tag_valid</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M110 80h10" />
+<text x="118" y="79" fill="black" stroke-width="0" font-size="10" text-anchor="end">in[7:0]</text>
+<path d="M110 100h10" />
+<text x="118" y="99" fill="black" stroke-width="0" font-size="10" text-anchor="end">in_type[2:0]</text>
+<path d="M110 140h10" />
+<text x="118" y="139" fill="black" stroke-width="0" font-size="10" text-anchor="end">in_valid_bit[10:0]</text>
+<path d="M190 80h-10" />
+<text x="182" y="79" fill="black" stroke-width="0" font-size="10">out[7:0]</text>
+<path d="M190 100h-10" />
+<text x="182" y="99" fill="black" stroke-width="0" font-size="10">pc_ct_len_bit[10:0]</text>
+<text x="300" y="99" fill="black" stroke-width="0" font-size="8">n/c</text>
+<path d="M190 140h-10" />
+<text x="182" y="139" fill="black" stroke-width="0" font-size="10">pc_ct_valid_bit[3:0]</text>
+</g>
+<g stroke="black">
+<path d="M130 60h-10" />
+<path d="M130 120h-10" />
+<path d="M130 160h-10" />
+<path d="M130 180h-10" />
+<path d="M170 120h10" />
+<path d="M130 200h-10" />
+<path d="M170 160h10" />
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M130 80h-10" />
+<path d="M130 100h-10" />
+<path d="M130 140h-10" />
+<path d="M170 80h10" />
+<path d="M170 100h10" />
+<path d="M170 140h10" />
+</g>
+</g>
+</svg>

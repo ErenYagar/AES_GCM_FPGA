@@ -1,0 +1,7 @@
+design=design_1
+part=xc7a100tcsg324-1
+setup_wns_ns=7.376
+hold_whs_ns=0.016
+drc_violation_count=0
+unrouted_net_count=0
+checkpoint=C:/project/FPGA2/artifacts/工程報告(engineering_reports)/凍結UART(frozen_uart)/檢查點(checkpoint)/fpga_top_arty_a7_uart_routed.dcp

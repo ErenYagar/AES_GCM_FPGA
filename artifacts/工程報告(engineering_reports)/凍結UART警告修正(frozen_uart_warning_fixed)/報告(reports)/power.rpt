@@ -1,0 +1,282 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date             : Sat Aug 15 20:33:38 2026
+| Host             : DESKTOP-IO47298 running 64-bit major release  (build 9200)
+| Command          : report_power -advisory -file C:/project/FPGA2/artifacts/工程報告(engineering_reports)/凍結UART警告修正(frozen_uart_warning_fixed)/報告(reports)/power.rpt
+| Design           : fpga_top_arty_a7_uart
+| Device           : xc7a100tcsg324-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+4. Advisory
+
+1. Summary
+----------
+
++--------------------------+--------------+
+| Total On-Chip Power (W)  | 0.296        |
+| Design Power Budget (W)  | Unspecified* |
+| Power Budget Margin (W)  | NA           |
+| Dynamic (W)              | 0.195        |
+| Device Static (W)        | 0.101        |
+| Effective TJA (C/W)      | 4.6          |
+| Max Ambient (C)          | 83.6         |
+| Junction Temperature (C) | 26.4         |
+| Confidence Level         | Medium       |
+| Setting File             | ---          |
+| Simulation Activity File | ---          |
+| Design Nets Matched      | NA           |
++--------------------------+--------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Clocks         |     0.011 |        5 |       --- |             --- |
+| Slice Logic    |     0.017 |    58487 |       --- |             --- |
+|   LUT as Logic |     0.016 |    26716 |     63400 |           42.14 |
+|   F7/F8 Muxes  |    <0.001 |     2986 |     63400 |            4.71 |
+|   Register     |    <0.001 |    21970 |    126800 |           17.33 |
+|   CARRY4       |    <0.001 |      204 |     15850 |            1.29 |
+|   Others       |     0.000 |      196 |       --- |             --- |
+| Signals        |     0.019 |    42477 |       --- |             --- |
+| Block RAM      |     0.042 |     52.5 |       135 |           38.89 |
+| MMCM           |     0.106 |        1 |         6 |           16.67 |
+| I/O            |    <0.001 |        8 |       210 |            3.81 |
+| Static Power   |     0.101 |          |           |                 |
+| Total          |     0.296 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+| Vccint    |       1.000 |     0.103 |       0.085 |      0.018 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.077 |       0.059 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.004 |       0.000 |      0.004 |       NA    | Unspecified | NA         |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.005 |       0.003 |      0.002 |       NA    | Unspecified | NA         |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
++-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                               | Action                                                                                                     |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                      |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                |                                                                                                            |
+| I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                          |                                                                                                            |
+|                             |            |                                                       |                                                                                                            |
+| Overall confidence level    | Medium     |                                                       |                                                                                                            |
++-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+--------------------------+
+| Ambient Temp (C)      | 25.0                     |
+| ThetaJA (C/W)         | 4.6                      |
+| Airflow (LFM)         | 250                      |
+| Heat Sink             | medium (Medium Profile)  |
+| ThetaSA (C/W)         | 4.6                      |
+| Board Selection       | medium (10"x10")         |
+| # of Board Layers     | 12to15 (12 to 15 Layers) |
+| Board Temperature (C) | 25.0                     |
++-----------------------+--------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++---------------+---------------+-----------------+
+| Clock         | Domain        | Constraint (ns) |
++---------------+---------------+-----------------+
+| core_clk_mmcm | core_clk_mmcm |            40.0 |
+| mmcm_clkfb    | mmcm_clkfb    |            10.0 |
+| sys_clk_pin   | clk           |            10.0 |
++---------------+---------------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++-----------------------+-----------+
+| Name                  | Power (W) |
++-----------------------+-----------+
+| fpga_top_arty_a7_uart |     0.195 |
+|   u_core              |     0.078 |
+|     u_aad_ct_in       |     0.004 |
+|     u_data_ctr        |     0.023 |
+|       g0              |     0.021 |
+|     u_hcalc           |     0.024 |
+|       g5              |     0.018 |
+|     u_tag_ctr         |     0.021 |
+|       g0              |     0.020 |
++-----------------------+-----------+
+
+
+4. Advisory
+-----------
+
++------------------+----------------------------------+--------+-------------+-------------+--------------------+-----------------+-----------------------------------------------+
+| Confidence Level | Status                           | Fanout | Signal Type | Polarity    | Static Probability | Toggle Rate (%) | Net                                           |
++------------------+----------------------------------+--------+-------------+-------------+--------------------+-----------------+-----------------------------------------------+
+| Low              | Excessive Set/Reset/Preset/Clear |   9339 | Reset/Set   | Active High |               0.36 |             4.0 | u_core/u_tag_ctr/g0/g3/u_mmcm                 |
+| Low              | Excessive Set/Reset/Preset/Clear |   4272 | Reset       | Active High |               0.38 |             4.6 | u_core/u_aad_ct_in/clear_collectors_reg       |
+| Low              |                                  |   1048 |             | Active High |               0.00 |             0.0 | frame_load_req_reg_n_0                        |
+| Low              |                                  |   1048 |             | Active High |               0.01 |             1.8 | u_uart_tx/send_tag_pending_reg[0]             |
+| Low              |                                  |   1043 |             | Active High |               0.00 |             0.1 | u_uart_tx/eng_state_reg[1]_rep__14_1[0]       |
+| Low              |                                  |   1039 |             | Active High |               0.00 |             0.1 | u_core/u_aad_ct_in/E[0]                       |
+| Low              |                                  |   1024 |             | Active High |               0.01 |             0.9 | u_core/u_aad_ct_in/aad_data_r                 |
+| Low              |                                  |   1024 |             | Active High |               0.00 |             0.7 | u_core/u_aad_ct_in/ct_data_r                  |
+| Low              |                                  |   1024 |             | Active High |               0.00 |             0.1 | u_core/u_aad_ct_in/pt_data_r                  |
+| Low              |                                  |   1024 |             | Active High |               0.00 |             0.1 | u_core/u_iv_in/iv_data_r                      |
+| Low              |                                  |   1024 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_cmd_reg[2]_0[0]                  |
+| Low              |                                  |   1024 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_cmd_reg[2]_1[0]                  |
+| Low              |                                  |   1024 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_cmd_reg[2]_2[0]                  |
+| Low              |                                  |   1024 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_cmd_reg[2]_4[0]                  |
+| Low              |                                  |    512 |             | Active High |               0.01 |             0.6 | u_core/tag_key                                |
+| Low              |                                  |    262 |             | Active High |               0.03 |             2.6 | u_core/key_byte_count                         |
+| Low              |                                  |    256 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_cmd_reg[2]_5[0]                  |
+| Low              |                                  |    133 |             | Active High |               0.00 |             0.1 | u_uart_tx/eng_state_reg[2]_rep__11[0]         |
+| Low              |                                  |    128 |             | Active High |               0.03 |             3.0 | u_core/ghash_en                               |
+| Low              |                                  |    128 |             | Active High |               0.01 |             1.6 | u_core/tag_start                              |
+| Low              |                                  |    128 |             | Active High |               0.00 |             0.1 | u_core/u_aad_ct_in/tag_data_r                 |
+| Low              |                                  |    128 |             | Active High |               0.02 |             2.1 | u_core/u_data_ctr/g0/g5/dout_r                |
+| Low              |                                  |    128 |             | Active High |               0.00 |             0.1 | u_core/u_data_ctr/g0/p_1_in                   |
+| Low              |                                  |    128 |             | Active High |               0.02 |             1.8 | u_core/u_data_ctr/state_reg[2][0]             |
+| Low              |                                  |    128 |             | Active High |               0.00 |             0.2 | u_core/u_ghash/state_reg[4][0]                |
+| Low              |                                  |    128 |             | Active High |               0.02 |             1.9 | u_core/u_hcalc/E[0]                           |
+| Low              |                                  |    128 |             | Active High |               0.03 |             2.0 | u_core/u_hcalc/g5/dout_r                      |
+| Low              |                                  |    128 |             | Active High |               0.00 |             0.0 | u_core/u_hcalc/p_1_in                         |
+| Low              |                                  |    128 |             | Active High |               0.02 |             2.0 | u_core/u_tag_ctr/g0/g5/dout_r                 |
+| Low              |                                  |    128 |             | Active High |               0.00 |             0.0 | u_core/u_tag_ctr/g0/p_1_in                    |
+| Low              |                                  |    128 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_cmd_reg[2][0]                    |
+| Low              |                                  |     16 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_len_bits[0]                      |
+| Low              | Excessive Set/Reset/Preset/Clear |     13 | Reset       | Active High |               0.37 |             4.0 | u_core/u_data_ctr/g0/i___7_n_0                |
+| Low              | Excessive Set/Reset/Preset/Clear |     13 | Reset       | Active High |               0.37 |             4.0 | u_core/u_tag_ctr/g0/i___7_n_0                 |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_core/u_aad_ct_in/aad_len_bits_r[10]_i_1_n_0 |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_core/u_aad_ct_in/ct_len_bits_r              |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_core/u_aad_ct_in/pt_len_bits_r              |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_core/u_aad_ct_in/tag_len_bits_r[10]_i_1_n_0 |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_uart_rx/E[0]                                |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_cmd_reg[3][0]                    |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_state_reg[0]_rep__6[0]           |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_state_reg[0]_rep__6_0[0]         |
+| Low              |                                  |     12 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_state_reg[0]_rep__6_1[0]         |
+| Low              |                                  |     11 |             | Active High |               0.00 |             0.0 | u_core/u_iv_in/iv_len_bits_r                  |
+| Low              | Excessive Set/Reset/Preset/Clear |     11 | Reset       | Active High |               0.38 |             4.6 | u_core/u_iv_in/iv_len_bits_r[10]_i_1_n_0      |
+| Low              |                                  |      8 |             | Active High |               0.01 |             1.2 | u_core/out[7]_i_1_n_0                         |
+| Low              | Excessive Set/Reset/Preset/Clear |      8 | Reset/Set   | Active High |               0.38 |             4.4 | u_core/u_data_ctr/valid_bits_r[7]_i_1_n_0     |
+| Low              | Excessive Set/Reset/Preset/Clear |      8 | Reset       | Active High |               0.37 |             4.0 | u_core/u_hcalc/i___7_n_0                      |
+| Low              |                                  |      8 |             | Active High |               0.00 |             0.0 | u_uart_rx/data[7]_i_1_n_0                     |
+| Low              |                                  |      8 |             | Active High |               0.00 |             0.0 | u_uart_rx/data_valid_reg_41[0]                |
+| Low              |                                  |      8 |             | Active High |               0.00 |             0.0 | u_uart_rx/data_valid_reg_42[0]                |
+| Low              |                                  |      8 |             | Active High |               0.00 |             0.0 | u_uart_rx/rx_len_bits[1]                      |
+| Low              |                                  |      8 |             | Active High |               0.01 |             2.1 | u_uart_tx/shreg                               |
+| Low              |                                  |      7 |             | Active High |               0.01 |             1.2 | u_core/u_tag_ctr/state_reg[4]_0[0]            |
+| Low              |                                  |      4 |             | Active High |               0.02 |             3.0 | u_core/u_ghash/E[0]                           |
+| Low              |                                  |      4 |             | Active High |               0.02 |             1.8 | u_core/u_ghash/state_reg[0]_rep__7[0]         |
+| Low              |                                  |      4 |             | Active High |               0.01 |             2.8 | u_uart_rx/bit_idx                             |
+| Low              |                                  |      4 |             | Active High |               0.00 |             0.1 | u_uart_tx/eng_state_reg[0][0]                 |
+| Medium           |                                  |   1024 |             | Active High |               0.04 |             1.3 | u_core/u_data_ctr/state_reg[0]_rep[0]         |
+| Medium           |                                  |    520 |             | Active High |               0.04 |             4.0 | u_core/data_key                               |
+| Medium           |                                  |    391 |             | Active High |               0.21 |            12.4 | u_core/u_ghash/bit_cnt[6]_i_1_n_0             |
+| Medium           |                                  |    256 |             | Active High |               0.05 |             4.2 | u_core/hcalc_word                             |
+| Medium           |                                  |    256 |             | Active High |               1.00 |             0.3 | u_core/u_data_ctr/g0/p_0_in                   |
+| Medium           |                                  |    256 |             | Active High |               1.00 |             0.3 | u_core/u_hcalc/p_0_in                         |
+| Medium           |                                  |    256 |             | Active High |               1.00 |             0.3 | u_core/u_tag_ctr/g0/p_0_in                    |
+| Medium           |                                  |    136 |             | Active High |               0.05 |             7.4 | u_core/data_start                             |
+| Medium           |                                  |    128 |             | Active High |               0.45 |             3.9 | u_core/u_data_ctr/g0/E[0]                     |
+| Medium           |                                  |    128 |             | Active High |               0.34 |             4.6 | u_core/u_data_ctr/g0/g2/E[0]                  |
+| Medium           |                                  |    128 |             | Active High |               0.36 |             4.7 | u_core/u_data_ctr/g0/g3/busy_r_reg_0[0]       |
+| Medium           |                                  |    128 |             | Active High |               0.11 |             5.3 | u_core/u_data_ctr/g0/g3/start_detect_nxt1     |
+| Medium           |                                  |    128 |             | Active High |               0.36 |             5.0 | u_core/u_data_ctr/g0/g4/E[0]                  |
+| Medium           |                                  |    128 |             | Active High |               0.23 |             6.9 | u_core/u_data_ctr/g0/g4/start_detect          |
+| Medium           |                                  |    128 |             | Active High |               0.13 |             5.5 | u_core/u_data_ctr/g0/start_detect             |
+| Medium           |                                  |    128 |             | Active High |               0.34 |             4.7 | u_core/u_hcalc/g2/E[0]                        |
+| Medium           |                                  |    128 |             | Active High |               0.36 |             4.8 | u_core/u_hcalc/g3/busy_r_reg_0[0]             |
+| Medium           |                                  |    128 |             | Active High |               0.11 |             5.4 | u_core/u_hcalc/g3/start_detect_nxt1           |
+| Medium           |                                  |    128 |             | Active High |               0.36 |             4.5 | u_core/u_hcalc/g4/E[0]                        |
+| Medium           |                                  |    128 |             | Active High |               0.22 |             5.4 | u_core/u_hcalc/g4/start_detect                |
+| Medium           |                                  |    128 |             | Active High |               0.12 |             5.7 | u_core/u_hcalc/start_detect                   |
+| Medium           |                                  |    128 |             | Active High |               0.06 |             6.5 | u_core/u_tag_ctr/E[0]                         |
+| Medium           |                                  |    128 |             | Active High |               0.49 |             3.6 | u_core/u_tag_ctr/g0/fin_r_d1_reg_0            |
+| Medium           |                                  |    128 |             | Active High |               0.34 |             4.6 | u_core/u_tag_ctr/g0/g2/E[0]                   |
+| Medium           |                                  |    128 |             | Active High |               0.36 |             4.7 | u_core/u_tag_ctr/g0/g3/busy_r_reg_0[0]        |
+| Medium           |                                  |    128 |             | Active High |               0.11 |             5.3 | u_core/u_tag_ctr/g0/g3/start_detect_nxt1      |
+| Medium           |                                  |    128 |             | Active High |               0.36 |             5.0 | u_core/u_tag_ctr/g0/g4/E[0]                   |
+| Medium           |                                  |    128 |             | Active High |               0.23 |             6.8 | u_core/u_tag_ctr/g0/g4/start_detect           |
+| Medium           |                                  |    128 |             | Active High |               0.13 |             5.5 | u_core/u_tag_ctr/g0/start_detect              |
+| Medium           |                                  |     42 |             | Active High |               0.35 |            48.0 | u_uart_tx/eng_state_reg[1]_rep__14            |
+| Medium           |                                  |     25 |             | Active High |               0.48 |            41.0 | u_core/u_hcalc/state_reg[3]_rep               |
+| Medium           |                                  |     22 |             | Active High |               0.04 |             4.2 | u_core/tag_out_len_bits[10]_i_1_n_0           |
+| Medium           |                                  |     20 |             | Active High |               0.16 |            16.0 | wait_watchdog0                                |
+| Medium           |                                  |     16 | BRAM Enable | Active High |               0.42 |             4.5 | u_core/u_data_ctr/g0/i___17_n_0               |
+| Medium           |                                  |     16 | BRAM Enable | Active High |               0.42 |             4.6 | u_core/u_hcalc/i___17_n_0                     |
+| Medium           |                                  |     16 | BRAM Enable | Active High |               0.42 |             4.5 | u_core/u_tag_ctr/g0/i___17_n_0                |
+| Medium           |                                  |     16 |             | Active High |               1.00 |             0.0 | u_uart_rx/clk_cnt                             |
+| Medium           |                                  |     13 |             | Active High |               0.07 |             5.5 | u_core/u_data_ctr/g0/g5/start_detect          |
+| Medium           |                                  |     13 |             | Active High |               0.07 |             5.3 | u_core/u_tag_ctr/g0/g5/start_detect           |
+| Medium           |                                  |      8 |             | Active High |               0.28 |            42.9 | eng_send_idx[7]__0_i_1_n_0                    |
+| Medium           |                                  |      8 |             | Active High |               0.16 |            14.1 | in_valid_reg                                  |
+| Medium           |                                  |      8 |             | Active High |               0.07 |             5.1 | u_core/u_hcalc/g5/start_detect                |
+| Medium           |                                  |      8 |             | Active High |               0.33 |            44.2 | u_uart_tx/E[0]                                |
+| Medium           |                                  |      8 |             | Active High |               0.17 |            24.5 | u_uart_tx/tx_start_reg_reg[0]                 |
+| Medium           |                                  |      6 |             | Active High |               0.06 |            11.6 | u_uart_tx/eng_state_reg[0]_0[0]               |
+| Medium           |                                  |      6 |             | Active High |               0.23 |            36.6 | warmup_cnt[5]_i_1_n_0                         |
+| Medium           |                                  |      4 |             | Active High |               0.07 |             7.0 | u_core/u_data_ctr/data_block_idx              |
+| Medium           |                                  |      4 |             | Active High |               0.28 |            25.6 | u_uart_tx/eng_state_reg[1]_rep__14_0[0]       |
+| High             |                                  |   8139 | Reset/Set   | Active High |               0.00 |             0.0 | u_uart_rx/sys_rst                             |
+| High             |                                  |     26 | Reset       | Active High |               0.00 |             0.0 | rst                                           |
+| High             |                                  |      8 | Reset       | Active High |               0.00 |             0.0 | frame_byte_idx                                |
+| High             |                                  |      1 | Clear       | Active Low  |               1.00 |             0.0 | rst_btn_IBUF                                  |
++------------------+----------------------------------+--------+-------------+-------------+--------------------+-----------------+-----------------------------------------------+
+* High:  No action required.  Calculated activity values are consistent with signal type and polarity.
+** Medium:  Switching activity should be reviewed and corrected if necessary.  Calculated activity values may be inconsistent with signal type and polarity which can result in inaccurate power analysis.
+*** Low: Switching activity must be reviewed and corrected to prevent incorrect power analysis. Calculated activity values are inappropriate for the signal type and polarity.
+
+
