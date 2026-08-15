@@ -1,0 +1,61 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Sat Aug 15 10:06:43 2026
+| Host         : DESKTOP-IO47298 running 64-bit major release  (build 9200)
+| Command      : report_qor_assessment -max_paths 10 -file C:/project/FPGA2/artifacts/工程報告(engineering_reports)/凍結UART(frozen_uart)/報告(reports)/qor_assessment.rpt
+| Design       : fpga_top_arty_a7_uart
+| Device       : xc7a100tcsg324-1
+| Speed File   : -1
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report QoR Assessment
+
+Table of Contents
+-----------------
+1. Overall Assessment Summary
+2. QoR Assessment Details
+3. Methodology Check Details
+4. ML Strategy Availability
+
+1. Overall Assessment Summary
+-----------------------------
+
++----------------------+-----------------------------------------------------------+
+| QoR Assessment Score | 5 - Design runs will meet timing                          |
++----------------------+-----------------------------------------------------------+
+| Flow Guidance        | Run report_methodology and fix or waive critical warnings |
++----------------------+-----------------------------------------------------------+
+
+
+2. QoR Assessment Details
+-------------------------
+
++-------------+-----------+--------+------+-----------+--------+
+| Name        | Threshold | Actual | Used | Available | Status |
++-------------+-----------+--------+------+-----------+--------+
+| Utilization |           |        |      |           |     OK |
+| Clocking    |           |        |      |           |     OK |
+| Congestion  |           |        |      |           |     OK |
+| Timing      |           |        |      |           |     OK |
++-------------+-----------+--------+------+-----------+--------+
+
+
+3. Methodology Check Details
+----------------------------
+
++-----------+----------------------------------------------------+------------------+----------------------+
+| ID        | Description                                        | Criticality      | Number of Violations |
++-----------+----------------------------------------------------+------------------+----------------------+
+| TIMING-2  | Invalid primary clock source pin                   | Critical Warning | 1                    |
+| TIMING-4  | Invalid primary clock redefinition on a clock tree | Critical Warning | 1                    |
+| TIMING-18 | Missing input or output delay                      | Warning          | 7                    |
++-----------+----------------------------------------------------+------------------+----------------------+
+
+
+4. ML Strategy Availability
+---------------------------
+
+ML Strategy is not supported for 7-series architectures.
+

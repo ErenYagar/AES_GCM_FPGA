@@ -1,0 +1,73 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Aug 15 10:09:35 2026
+# Process ID: 2256
+# Current directory: C:/project/FPGA2
+# Command line: vivado.exe -mode batch -source C:\project\FPGA2\.Xil\verify_checkpoint.tcl -log C:\project\FPGA2\.Xil\vivado_checkpoint_verify.log -journal C:\project\FPGA2\.Xil\vivado_checkpoint_verify.jou
+# Log file: C:/project/FPGA2/.Xil/vivado_checkpoint_verify.log
+# Journal file: C:\project\FPGA2\.Xil\vivado_checkpoint_verify.jou
+#-----------------------------------------------------------
+source {C:\project\FPGA2\.Xil\verify_checkpoint.tcl}
+# set root_dir "C:/project/FPGA2"
+# set package_dir "$root_dir/artifacts/\u5de5\u7a0b\u5831\u544a(engineering_reports)/\u51cd\u7d50UART(frozen_uart)"
+# set checkpoint "$package_dir/\u6aa2\u67e5\u9ede(checkpoint)/fpga_top_arty_a7_uart_routed.dcp"
+# set result_file "$package_dir/\u4f86\u6e90\u8207\u7d00\u9304(provenance)/checkpoint_validation.txt"
+# open_checkpoint $checkpoint
+Command: open_checkpoint C:/project/FPGA2/artifacts/工程報告(engineering_reports)/凍結UART(frozen_uart)/檢查點(checkpoint)/fpga_top_arty_a7_uart_routed.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1135.035 ; gain = 2.742
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.312 . Memory (MB): peak = 1135.035 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3296 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2021.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1561.383 ; gain = 39.523
+Restored from archive | CPU: 4.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 1561.383 ; gain = 39.523
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1561.383 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2021.1 (64-bit) build 3247384
+open_checkpoint: Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 1561.531 ; gain = 439.367
+get_timing_paths: Time (s): cpu = 00:00:14 ; elapsed = 00:00:09 . Memory (MB): peak = 1667.465 ; gain = 105.934
+# set setup_path [get_timing_paths -delay_type max -max_paths 1]
+# set hold_path [get_timing_paths -delay_type min -max_paths 1]
+# set unrouted_nets [get_nets -quiet -hierarchical -filter {ROUTE_STATUS == UNROUTED}]
+# report_drc -return_string
+Command: report_drc -return_string
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2021.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+report_drc completed successfully
+# set fp [open $result_file w]
+# puts $fp "checkpoint_open=PASS"
+# puts $fp "vivado_version=[version -short]"
+# puts $fp "design=[current_design]"
+# puts $fp "part=[get_property PART [current_design]]"
+# puts $fp "setup_wns_ns=[get_property SLACK $setup_path]"
+# puts $fp "hold_whs_ns=[get_property SLACK $hold_path]"
+WARNING: [Vivado_Tcl 4-49] No violations matched '*'.
+# puts $fp "drc_violation_count=[llength [get_drc_violations]]"
+# puts $fp "unrouted_net_count=[llength $unrouted_nets]"
+# foreach clock [get_clocks] {
+#     puts $fp "clock=[get_property NAME $clock],period_ns=[get_property PERIOD $clock]"
+# }
+# close $fp
+# puts "CHECKPOINT_VALIDATION_COMPLETE"
+CHECKPOINT_VALIDATION_COMPLETE
+# exit
+INFO: [Common 17-206] Exiting Vivado at Sat Aug 15 10:10:18 2026...

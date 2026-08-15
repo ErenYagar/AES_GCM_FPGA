@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.1 (64-bit)
+# SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
+# IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
+# Start of session at: Sat Aug 15 10:13:35 2026
+# Process ID: 964
+# Current directory: C:/project/FPGA2
+# Command line: vivado.exe -mode gui -source C:\project\FPGA2\.Xil\generate_visuals_gui.tcl -log C:\project\FPGA2\.Xil\vivado_visuals_gui.log -journal C:\project\FPGA2\.Xil\vivado_visuals_gui.jou
+# Log file: C:/project/FPGA2/.Xil/vivado_visuals_gui.log
+# Journal file: C:\project\FPGA2\.Xil\vivado_visuals_gui.jou
+#-----------------------------------------------------------
+start_gui
+source {C:\project\FPGA2\.Xil\generate_visuals_gui.tcl}

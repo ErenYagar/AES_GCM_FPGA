@@ -1,0 +1,10 @@
+cell,loc,tile,grid_x,grid_y
+"alive_div_reg[1]","SLICE_X89Y95","CLBLM_R_X55Y95","137","109"
+"alive_div_reg[0]_i_1","SLICE_X89Y95","CLBLM_R_X55Y95","137","109"
+"alive_div_reg[4]_i_1","SLICE_X89Y96","CLBLM_R_X55Y96","137","108"
+"alive_div_reg[8]_i_1","SLICE_X89Y97","CLBLM_R_X55Y97","137","107"
+"alive_div_reg[12]_i_1","SLICE_X89Y98","CLBLM_R_X55Y98","137","106"
+"alive_div_reg[16]_i_1","SLICE_X89Y99","CLBLM_R_X55Y99","137","105"
+"alive_div_reg[20]_i_1","SLICE_X89Y100","CLBLM_R_X55Y100","137","103"
+"alive_div_reg[24]_i_1","SLICE_X89Y101","CLBLM_R_X55Y101","137","102"
+"alive_div_reg[25]","SLICE_X89Y101","CLBLM_R_X55Y101","137","102"

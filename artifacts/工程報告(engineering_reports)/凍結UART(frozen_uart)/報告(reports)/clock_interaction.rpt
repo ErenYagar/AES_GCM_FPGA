@@ -1,0 +1,23 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
+| Date         : Sat Aug 15 10:06:43 2026
+| Host         : DESKTOP-IO47298 running 64-bit major release  (build 9200)
+| Command      : report_clock_interaction -file C:/project/FPGA2/artifacts/工程報告(engineering_reports)/凍結UART(frozen_uart)/報告(reports)/clock_interaction.rpt
+| Design       : fpga_top_arty_a7_uart
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Clock Interaction Report
+
+Clock Interaction Table
+-----------------------
+
+                              WNS                            TNS Failing  TNS Total    WNS Path         Clock-Pair           Inter-Clock  
+From Clock     To Clock       Clock Edges  WNS(ns)  TNS(ns)    Endpoints    Endpoints  Requirement(ns)  Classification       Constraints  
+-------------  -------------  -----------  -------  -------  -----------  -----------  ---------------  -------------------  -----------  
+core_clk       core_clk       rise - rise    11.79     0.00            0        58895            40.00  Clean                Timed        
+sys_clk_pin    sys_clk_pin    rise - rise     7.38     0.00            0           26            10.00  Clean                Timed        
+
+

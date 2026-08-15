@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 270 1560"
+     preserveAspectRatio="xMidYMid meet"
+     version="1.1"
+     baseProfile="full"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     xmlns:ev="http://www.w3.org/2001/xml-events"
+     xml:space="preserve">
+<title>fpga_top_arty_a7_uart</title>
+<desc>Nlview schematic (SVG)</desc>
+<clipPath id="clippingbbox">
+<rect x="0" y="0" width="1560" height="270" />
+</clipPath>
+<g stroke="#19b400"
+   stroke-width="1"
+   stroke-linecap="butt"
+   stroke-linejoin="miter"
+   stroke-miterlimit="4"
+   stroke-dasharray="none"
+   stroke-dashoffset="0"
+   fill="none"
+   font-family="Helvetica"
+   font-style="normal"
+   font-size="12"
+   writing-mode="lr-tb"
+   cursor="crosshair"
+   transform="rotate(-90) translate(-1560)"
+   clip-path="url(#clippingbbox)">
+<path d="M0 0h1560v271h-1560z" stroke="none" fill="white" />
+<path d="M40 50h60v100h-60z" stroke="none" fill="#ffffcc" />
+<g stroke="black">
+<path d="M40 50h60v100h-60z" />
+<path d="M40 73l7 -3l-7 -3" />
+<text x="70" y="48" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[1]</text>
+<text x="70" y="152" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">FDRE</text>
+<path d="M110 100h-10" />
+<text x="98" y="100" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">Q</text>
+<path d="M30 70h10" />
+<text x="49" y="70" fill="black" stroke-width="0" font-size="10" dy="3.25">C</text>
+<path d="M30 90h10" />
+<text x="42" y="90" fill="black" stroke-width="0" font-size="10" dy="3.25">CE</text>
+<path d="M30 110h10" />
+<text x="42" y="110" fill="black" stroke-width="0" font-size="10" dy="3.25">D</text>
+<path d="M30 130h10" />
+<text x="42" y="130" fill="black" stroke-width="0" font-size="10" dy="3.25">R</text>
+<path d="M210 30h120v80h-120z" stroke="none" fill="#ffffcc" />
+<path d="M210 30h120v80h-120z" />
+<text x="270" y="28" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[0]_i_1</text>
+<text x="270" y="112" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">CARRY4</text>
+<path d="M200 40h10" />
+<text x="212" y="40" fill="black" stroke-width="0" font-size="10" dy="3.25">CI</text>
+<path d="M200 60h10" />
+<text x="212" y="60" fill="black" stroke-width="0" font-size="10" dy="3.25">CYINIT</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M340 60h-10" />
+<text x="328" y="60" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">CO[3:0]</text>
+<path d="M340 80h-10" />
+<text x="328" y="80" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">O[3:0]</text>
+<path d="M200 80h10" />
+<text x="212" y="80" fill="black" stroke-width="0" font-size="10" dy="3.25">DI[3:0]</text>
+<text x="208" y="79" fill="black" stroke-width="0" font-size="8" text-anchor="end">V=B&quot;0001&quot;</text>
+<path d="M200 100h10" />
+<text x="212" y="100" fill="black" stroke-width="0" font-size="10" dy="3.25">S[3:0]</text>
+<path d="M370 50h120v80h-120z" stroke="none" fill="#ffffcc" />
+</g>
+<g stroke="black">
+<path d="M370 50h120v80h-120z" />
+<text x="430" y="48" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[4]_i_1</text>
+<text x="430" y="132" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">CARRY4</text>
+<path d="M360 60h10" />
+<text x="372" y="60" fill="black" stroke-width="0" font-size="10" dy="3.25">CI</text>
+<path d="M360 80h10" />
+<text x="372" y="80" fill="black" stroke-width="0" font-size="10" dy="3.25">CYINIT</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M500 80h-10" />
+<text x="488" y="80" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">CO[3:0]</text>
+<path d="M500 100h-10" />
+<text x="488" y="100" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">O[3:0]</text>
+<path d="M360 100h10" />
+<text x="372" y="100" fill="black" stroke-width="0" font-size="10" dy="3.25">DI[3:0]</text>
+<path d="M360 120h10" />
+<text x="372" y="120" fill="black" stroke-width="0" font-size="10" dy="3.25">S[3:0]</text>
+<path d="M530 70h120v80h-120z" stroke="none" fill="#ffffcc" />
+</g>
+<g stroke="black">
+<path d="M530 70h120v80h-120z" />
+<text x="590" y="68" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[8]_i_1</text>
+<text x="590" y="152" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">CARRY4</text>
+<path d="M520 80h10" />
+<text x="532" y="80" fill="black" stroke-width="0" font-size="10" dy="3.25">CI</text>
+<path d="M520 100h10" />
+<text x="532" y="100" fill="black" stroke-width="0" font-size="10" dy="3.25">CYINIT</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M660 100h-10" />
+<text x="648" y="100" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">CO[3:0]</text>
+<path d="M660 120h-10" />
+<text x="648" y="120" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">O[3:0]</text>
+<path d="M520 120h10" />
+<text x="532" y="120" fill="black" stroke-width="0" font-size="10" dy="3.25">DI[3:0]</text>
+<path d="M520 140h10" />
+<text x="532" y="140" fill="black" stroke-width="0" font-size="10" dy="3.25">S[3:0]</text>
+<path d="M700 90h120v80h-120z" stroke="none" fill="#ffffcc" />
+</g>
+<g stroke="black">
+<path d="M700 90h120v80h-120z" />
+<text x="760" y="88" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[12]_i_1</text>
+<text x="760" y="172" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">CARRY4</text>
+<path d="M690 100h10" />
+<text x="702" y="100" fill="black" stroke-width="0" font-size="10" dy="3.25">CI</text>
+<path d="M690 120h10" />
+<text x="702" y="120" fill="black" stroke-width="0" font-size="10" dy="3.25">CYINIT</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M830 120h-10" />
+<text x="818" y="120" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">CO[3:0]</text>
+<path d="M830 140h-10" />
+<text x="818" y="140" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">O[3:0]</text>
+<path d="M690 140h10" />
+<text x="702" y="140" fill="black" stroke-width="0" font-size="10" dy="3.25">DI[3:0]</text>
+<path d="M690 160h10" />
+<text x="702" y="160" fill="black" stroke-width="0" font-size="10" dy="3.25">S[3:0]</text>
+<path d="M880 110h120v80h-120z" stroke="none" fill="#ffffcc" />
+</g>
+<g stroke="black">
+<path d="M880 110h120v80h-120z" />
+<text x="940" y="108" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[16]_i_1</text>
+<text x="940" y="192" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">CARRY4</text>
+<path d="M870 120h10" />
+<text x="882" y="120" fill="black" stroke-width="0" font-size="10" dy="3.25">CI</text>
+<path d="M870 140h10" />
+<text x="882" y="140" fill="black" stroke-width="0" font-size="10" dy="3.25">CYINIT</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M1010 140h-10" />
+<text x="998" y="140" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">CO[3:0]</text>
+<path d="M1010 160h-10" />
+<text x="998" y="160" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">O[3:0]</text>
+<path d="M870 160h10" />
+<text x="882" y="160" fill="black" stroke-width="0" font-size="10" dy="3.25">DI[3:0]</text>
+<path d="M870 180h10" />
+<text x="882" y="180" fill="black" stroke-width="0" font-size="10" dy="3.25">S[3:0]</text>
+<path d="M1060 130h120v80h-120z" stroke="none" fill="#ffffcc" />
+</g>
+<g stroke="black">
+<path d="M1060 130h120v80h-120z" />
+<text x="1120" y="128" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[20]_i_1</text>
+<text x="1120" y="212" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">CARRY4</text>
+<path d="M1050 140h10" />
+<text x="1062" y="140" fill="black" stroke-width="0" font-size="10" dy="3.25">CI</text>
+<path d="M1050 160h10" />
+<text x="1062" y="160" fill="black" stroke-width="0" font-size="10" dy="3.25">CYINIT</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M1190 160h-10" />
+<text x="1178" y="160" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">CO[3:0]</text>
+<path d="M1190 180h-10" />
+<text x="1178" y="180" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">O[3:0]</text>
+<path d="M1050 180h10" />
+<text x="1062" y="180" fill="black" stroke-width="0" font-size="10" dy="3.25">DI[3:0]</text>
+<path d="M1050 200h10" />
+<text x="1062" y="200" fill="black" stroke-width="0" font-size="10" dy="3.25">S[3:0]</text>
+<path d="M1240 150h120v80h-120z" stroke="none" fill="#ffffcc" />
+</g>
+<g stroke="black">
+<path d="M1240 150h120v80h-120z" />
+<text x="1300" y="148" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[24]_i_1</text>
+<text x="1300" y="232" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">CARRY4</text>
+<path d="M1230 160h10" />
+<text x="1242" y="160" fill="black" stroke-width="0" font-size="10" dy="3.25">CI</text>
+<path d="M1230 180h10" />
+<text x="1242" y="180" fill="black" stroke-width="0" font-size="10" dy="3.25">CYINIT</text>
+</g>
+<g stroke="black" stroke-width="3">
+<path d="M1370 180h-10" />
+<text x="1358" y="180" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">CO[3:0]</text>
+<text x="1362" y="179" fill="black" stroke-width="0" font-size="8">n/c</text>
+<path d="M1370 200h-10" />
+<text x="1358" y="200" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">O[3:0]</text>
+<path d="M1230 200h10" />
+<text x="1242" y="200" fill="black" stroke-width="0" font-size="10" dy="3.25">DI[3:0]</text>
+<path d="M1230 220h10" />
+<text x="1242" y="220" fill="black" stroke-width="0" font-size="10" dy="3.25">S[3:0]</text>
+<path d="M1450 140h60v100h-60z" stroke="none" fill="#ffffcc" />
+</g>
+<g stroke="black">
+<path d="M1450 140h60v100h-60z" />
+<path d="M1450 163l7 -3l-7 -3" />
+<text x="1480" y="138" fill="black" stroke-width="0" text-anchor="middle">alive_div_reg[25]</text>
+<text x="1480" y="242" fill="black" stroke-width="0" text-anchor="middle" dy="7.7">FDRE</text>
+<path d="M1520 190h-10" />
+<text x="1508" y="190" fill="black" stroke-width="0" font-size="10" text-anchor="end" dy="3.25">Q</text>
+<path d="M1440 160h10" />
+<text x="1459" y="160" fill="black" stroke-width="0" font-size="10" dy="3.25">C</text>
+<path d="M1440 180h10" />
+<text x="1452" y="180" fill="black" stroke-width="0" font-size="10" dy="3.25">CE</text>
+<path d="M1440 200h10" />
+<text x="1452" y="200" fill="black" stroke-width="0" font-size="10" dy="3.25">D</text>
+<path d="M1440 220h10" />
+<text x="1452" y="220" fill="black" stroke-width="0" font-size="10" dy="3.25">R</text>
+</g>
+<g>
+<path d="M340 60h20" />
+<path d="M500 80h20" />
+<path d="M660 100h30" />
+<path d="M830 120h40" />
+<path d="M1010 140h40" />
+<path d="M1190 160h40" />
+<path d="M1370 200h70" />
+<path d="M110 100h90" />
+</g>
+</g>
+</svg>

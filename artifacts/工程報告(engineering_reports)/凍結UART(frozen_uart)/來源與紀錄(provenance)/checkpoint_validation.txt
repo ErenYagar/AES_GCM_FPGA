@@ -1,0 +1,12 @@
+checkpoint_open=PASS
+vivado_version=2021.1
+design=checkpoint_fpga_top_arty_a7_uart_routed
+part=xc7a100tcsg324-1
+setup_wns_ns=7.376
+hold_whs_ns=0.016
+drc_violation_count=0
+unrouted_net_count=0
+clock=sys_clk_pin,period_ns=10.000
+clock=core_clk,period_ns=40.000
+clock=mmcm_clkfb,period_ns=10.000
+clock=core_clk_mmcm,period_ns=40.000
